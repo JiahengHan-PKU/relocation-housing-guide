@@ -18,6 +18,8 @@ Basemap: run `tools/fetch_basemap.py`, then `tools/build_basemap.py`. For a coas
 - Put source and date beside every rent.
 - Filters apply to both map and list. Say "listed", never "not available", when an amenity is absent from a source.
 - Provide modules for 3D tours, in-person tours and leasing links, built from verified links.
+- Show the neighborhood as a linked map and list: summary tiles, category toggles, 5- and 10-minute walking rings, and rows that highlight their place and draw a line to the building. Say when a chain is not in the data, rather than leaving a gap. Set brands and transit lines in the `nearby` config.
+- Keep safety visible in the list as well as on the building page, and say that ZIP-level grades are averages.
 - Make score weights adjustable.
 - Keep the income figure out unless the user asked for it (`page.annual_base`). When null, the page hides that module.
 

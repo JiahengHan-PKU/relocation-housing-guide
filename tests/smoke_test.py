@@ -37,6 +37,9 @@ def fill_demo(root):
         for item, value in [("electricity_rate", 0.15), ("electricity_use", 0.9), ("water_sewer", 40), ("internet", 55),
                             ("renters_insurance", 26), ("sales_tax", 0), ("required_fees", 100)]:
             handle.write(f"{item},{value},demo,always,https://example.com,2030-01-01,{FICTION}\n")
+    json.dump([{"kind": "supermarket", "name": "Demo Market", "brand": None, "lat": 40.0015, "lon": -75.0012},
+               {"kind": "restaurant", "name": "Demo Diner", "brand": None, "lat": 40.0013, "lon": -75.0008}],
+              open(f"{root}/data/pois.json", "w"))
     json.dump({key: [] for key in ["sea", "land", "water", "park", "building", "road", "rail"]},
               open(f"{root}/web/basemap.json", "w"))
 
@@ -72,6 +75,9 @@ def smoke_test():
             body = tab.inner_text("body")
             assert not errors, errors
             assert "Harbor One" in body and "$120,000" in body
+            assert tab.locator(".nb-row").count() == 2 and tab.locator(".nb-pin").count() == 2
+            tab.locator(".nb-row").first.click()
+            assert tab.locator(".nb-mk.on").count() == 1
             summary = browser.new_page()
             summary.goto(f"file://{tmp}/dist/summary.html")
             assert summary.pdf(prefer_css_page_size=True)[:4] == b"%PDF"

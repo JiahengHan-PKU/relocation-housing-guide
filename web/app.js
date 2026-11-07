@@ -16,7 +16,7 @@ const T = {
     ratings: "Ratings", reviews: "reviews", open: "Open building page", site: "Official site",
     studio: "Studio", "1b": "1 bed", "1b_den": "1 bed + den", "2b": "2 bed", "3b_plus": "3+ bed",
     name: "Building", score: "Score", rating: "Rating", size: "1B size", ppsf: "$/sqft", age: "Building age",
-    google: "Google", apts: "Apts.com", walkHead: "Walk", weights: "Score weights", weightsNote: "Each factor becomes a percentile rank from 0 to 1 across all buildings before weighting, so dollars, square feet and rating points are comparable. A missing factor's weight is shared across the others, except that a building with no 1B all-in cost gets no score.", sortBy: "Sort by", sortAsc: "Ascending", sortDesc: "Descending", aptsNone: "Apartments.com: no renter ratings yet", aptsMissing: "Apartments.com: building page not found",  aptsOverall: "Apartments.com overall", aptsOverallNote: "Apartments.com's 5-star score blends renter reviews with the CoStar building rating. It is left out of this guide's score.", goTitle: "See it and rent it", goVirtual: "3D virtual tours", goTour: "Book an in-person tour", goRent: "Rent or apply", goVirtualNone: "No 3D tour found. Ask the leasing office or a listing agent for a video walkthrough.", goTip: "Many leasing offices close on Sundays, so book weekdays and Saturdays first.", goCondoNote: "Units are leased by individual owners. Book through a listing agent.", phoneLabel: "Leasing office", kOfficial: "Official site", kOfficialTour: "Book on the official site", kOfficialApply: "Apply on the official site", kApartments: "Apartments.com", kApartmentsTour: "Request a tour on Apartments.com", k3d: "Apartments.com 3D tours", kVideo: "Official video tour", kCondo: "Owner listings", kCondoSub: "Live owner listings; agents arrange showings", kCbb: "Condo database", kCbbSub: "Listings and floor plans", kZillow: "Zillow", kZillowSub: "Address search", galTitle: "Listing floor plans", galNote: "Original listing images, shown online only. Open one to see it full size.", galAll: "All", galPlans: "plans", filters: "Filters", amenities: "Amenities", amenNote: "From the building's site and listing platforms. A missing amenity may simply be unlisted.", amenNone: "No amenity list found yet.",
+    google: "Google", apts: "Apts.com", walkHead: "Walk", nbGrocery: "Groceries", nbPharmacy: "Pharmacies", nbTransit: "Transit", nbDining: "Food and coffee", nbOutdoor: "Parks and gyms", nbSafety: "Safety", nbRestaurant: "Restaurant", nbCafe: "Cafe", nbDogPark: "Dog park", nbWithin5: "within a 5-minute walk", nbFiveShort: "5-min walk", nbBus300: "bus stops within 300 m", nbShowAll: "Show all within a 10-minute walk", nbNotFound: "Not in our data for this area", nbNote: "Walking times are estimates: straight-line distance × 1.25 at 80 m a minute. Places come from OpenStreetMap, which may miss some restaurants. Select a place to draw it on the map.", weights: "Score weights", weightsNote: "Each factor becomes a percentile rank from 0 to 1 across all buildings before weighting, so dollars, square feet and rating points are comparable. A missing factor's weight is shared across the others, except that a building with no 1B all-in cost gets no score.", sortBy: "Sort by", sortAsc: "Ascending", sortDesc: "Descending", aptsNone: "Apartments.com: no renter ratings yet", aptsMissing: "Apartments.com: building page not found",  aptsOverall: "Apartments.com overall", aptsOverallNote: "Apartments.com's 5-star score blends renter reviews with the CoStar building rating. It is left out of this guide's score.", goTitle: "See it and rent it", goVirtual: "3D virtual tours", goTour: "Book an in-person tour", goRent: "Rent or apply", goVirtualNone: "No 3D tour found. Ask the leasing office or a listing agent for a video walkthrough.", goTip: "Many leasing offices close on Sundays, so book weekdays and Saturdays first.", goCondoNote: "Units are leased by individual owners. Book through a listing agent.", phoneLabel: "Leasing office", kOfficial: "Official site", kOfficialTour: "Book on the official site", kOfficialApply: "Apply on the official site", kApartments: "Apartments.com", kApartmentsTour: "Request a tour on Apartments.com", k3d: "Apartments.com 3D tours", kVideo: "Official video tour", kCondo: "Owner listings", kCondoSub: "Live owner listings; agents arrange showings", kCbb: "Condo database", kCbbSub: "Listings and floor plans", kZillow: "Zillow", kZillowSub: "Address search", galTitle: "Listing floor plans", galNote: "Original listing images, shown online only. Open one to see it full size.", galAll: "All", galPlans: "plans", filters: "Filters", amenities: "Amenities", amenNote: "From the building's site and listing platforms. A missing amenity may simply be unlisted.", amenNone: "No amenity list found yet.",
     fRent: "1B rent up to", fAllin: "All-in up to", fWalk: "Walk up to", fRating: "Rating at least", fYear: "Built from", fAny: "any", fTypes: "Building type", fAmen: "Must have", fMore: "Also", fHas1b: "Has 1B price", fPlans: "Has floor plans", fOffer: "Has an offer", fReset: "Clear filters", fShow: "buildings match", fPricedOnly: "Price filters hide buildings with no 1B price.", weightsReset: "Reset to default", weightsCustom: "adjusted", safety: "Safety", noData: "No data yet",
     back: "Back to list", backMap: "Back to map", facts: "Building facts", about: "About", architect: "Architect", manager: "Manager",
     channel: "How you rent", address: "Address", costTitle: "Monthly cost, 1 bed", fees: "Mandatory building fees",
@@ -47,7 +47,7 @@ const T = {
     ratings: "评分", reviews: "条评论", open: "打开楼盘页", site: "官网",
     studio: "开间", "1b": "一居", "1b_den": "一居+书房", "2b": "两居", "3b_plus": "三居及以上",
     name: "楼盘", score: "综合分", rating: "评分", size: "1B 面积", ppsf: "每平尺", age: "楼龄",
-    google: "Google", apts: "Apts.com", walkHead: "步行", weights: "评分权重", weightsNote: "每一项都先换算成所有楼中的百分位排名（0 到 1），再按权重相加，所以美元、平方英尺和评分的单位差异不会影响结果。某栋楼缺某一项时，该项权重分摊给其余项；但没有 1B 月总成本的楼不计分。", sortBy: "排序方式", sortAsc: "升序", sortDesc: "降序", aptsNone: "Apartments.com：暂无住户评分", aptsMissing: "Apartments.com：未找到楼栋页",  aptsOverall: "Apartments.com 综合星级", aptsOverallNote: "Apartments.com 的 5 星综合评分，由住户评分和 CoStar 建筑评级混合而成，不计入本指南的综合评分。", goTitle: "看房与租房", goVirtual: "3D 虚拟看房", goTour: "预约线下看房", goRent: "租房与申请", goVirtualNone: "没有找到 3D 看房。可以向租赁办公室或挂牌经纪索要视频。", goTip: "不少租赁办公室周日不开门，建议优先约工作日和周六。", goCondoNote: "这栋楼由业主个人出租，需要通过挂牌经纪预约。", phoneLabel: "租赁办公室", kOfficial: "官方网站", kOfficialTour: "在官网预约", kOfficialApply: "在官网申请", kApartments: "Apartments.com", kApartmentsTour: "在 Apartments.com 预约", k3d: "Apartments.com 3D 看房", kVideo: "官方视频看房", kCondo: "业主挂牌", kCondoSub: "实时业主挂牌，经纪可安排看房", kCbb: "公寓数据库", kCbbSub: "挂牌与户型图", kZillow: "Zillow", kZillowSub: "按地址搜索", galTitle: "挂牌户型图", galNote: "挂牌平台原图，需联网显示。点开可看大图。", galAll: "全部", galPlans: "个户型", filters: "筛选", amenities: "设施", amenNote: "来自楼盘官网和挂牌平台。未列出不代表没有。", amenNone: "暂未找到设施列表。",
+    google: "Google", apts: "Apts.com", walkHead: "步行", nbGrocery: "超市", nbPharmacy: "药店", nbTransit: "交通", nbDining: "餐饮咖啡", nbOutdoor: "公园与健身", nbSafety: "治安", nbRestaurant: "餐厅", nbCafe: "咖啡馆", nbDogPark: "狗公园", nbWithin5: "步行 5 分钟内", nbFiveShort: "步行 5 分钟内", nbBus300: "300 米内公交站", nbShowAll: "显示 10 分钟步行范围内全部", nbNotFound: "本区域数据未收录", nbNote: "步行时间为估算：直线距离 × 1.25，按每分钟 80 米计算。地点来自 OpenStreetMap，餐饮可能不全。点选地点可在地图上画出路线方向。", weights: "评分权重", weightsNote: "每一项都先换算成所有楼中的百分位排名（0 到 1），再按权重相加，所以美元、平方英尺和评分的单位差异不会影响结果。某栋楼缺某一项时，该项权重分摊给其余项；但没有 1B 月总成本的楼不计分。", sortBy: "排序方式", sortAsc: "升序", sortDesc: "降序", aptsNone: "Apartments.com：暂无住户评分", aptsMissing: "Apartments.com：未找到楼栋页",  aptsOverall: "Apartments.com 综合星级", aptsOverallNote: "Apartments.com 的 5 星综合评分，由住户评分和 CoStar 建筑评级混合而成，不计入本指南的综合评分。", goTitle: "看房与租房", goVirtual: "3D 虚拟看房", goTour: "预约线下看房", goRent: "租房与申请", goVirtualNone: "没有找到 3D 看房。可以向租赁办公室或挂牌经纪索要视频。", goTip: "不少租赁办公室周日不开门，建议优先约工作日和周六。", goCondoNote: "这栋楼由业主个人出租，需要通过挂牌经纪预约。", phoneLabel: "租赁办公室", kOfficial: "官方网站", kOfficialTour: "在官网预约", kOfficialApply: "在官网申请", kApartments: "Apartments.com", kApartmentsTour: "在 Apartments.com 预约", k3d: "Apartments.com 3D 看房", kVideo: "官方视频看房", kCondo: "业主挂牌", kCondoSub: "实时业主挂牌，经纪可安排看房", kCbb: "公寓数据库", kCbbSub: "挂牌与户型图", kZillow: "Zillow", kZillowSub: "按地址搜索", galTitle: "挂牌户型图", galNote: "挂牌平台原图，需联网显示。点开可看大图。", galAll: "全部", galPlans: "个户型", filters: "筛选", amenities: "设施", amenNote: "来自楼盘官网和挂牌平台。未列出不代表没有。", amenNone: "暂未找到设施列表。",
     fRent: "1B 租金上限", fAllin: "每月合计上限", fWalk: "步行上限", fRating: "评分不低于", fYear: "建成不早于", fAny: "不限", fTypes: "楼盘类型", fAmen: "必须有", fMore: "其他", fHas1b: "有 1B 价格", fPlans: "有户型图", fOffer: "有当前优惠", fReset: "清除筛选", fShow: "栋符合", fPricedOnly: "价格筛选会隐藏没有 1B 价格的楼。", weightsReset: "恢复默认", weightsCustom: "已调整", safety: "治安", noData: "暂无数据",
     back: "返回列表", backMap: "返回地图", facts: "基本信息", about: "简介", architect: "建筑师", manager: "物业",
     channel: "租房方式", address: "地址", costTitle: "一居每月开销", fees: "大楼强制费用",
@@ -376,7 +376,7 @@ function initMap() {
 }
 
 /* ---------- list ---------- */
-const OPT = { year: "opt", floors: "opt", size: "opt", ppsf: "opt", apts: "opt", rating: "opt", rentMid: "opt2", google: "opt3" };
+const OPT = { year: "opt", floors: "opt", size: "opt", ppsf: "opt", apts: "opt", rating: "opt", safety: "opt", rentMid: "opt2", google: "opt3" };
 const COLS = [
   ["name", "name", b => b.name, v => null],
   ["walk", "walkHead", b => M[b.id].walk, v => v == null ? "–" : `${Math.round(v)} ${t("min")}`],
@@ -389,10 +389,11 @@ const COLS = [
   ["google", "google", b => M[b.id].google ? M[b.id].google.score : null, (v, b) => v == null ? "–" : `${v.toFixed(1)} <span class="muted">(${M[b.id].google.count})</span>`],
   ["apts", "apts", b => M[b.id].apts ? M[b.id].apts.score : null, (v, b) => v == null ? "–" : M[b.id].apts.group === "overall" ? `<span title="${esc(t("aptsOverallNote"))}">★${v.toFixed(1)}</span>` : `${v.toFixed(1)} <span class="muted">(${M[b.id].apts.count})</span>`],
   ["rating", "rating", b => M[b.id].rating, v => v == null ? "–" : v.toFixed(2)],
+  ["safety", "safety", b => M[b.id].safety, (v, b) => v == null ? "–" : `${esc(b.safety.overall)} <span class="muted">${v.toFixed(1)}</span>`],
   ["score", "score", b => M[b.id].score, v => v == null ? "–" : `${Math.round(v)}<span class="scorebar"><i style="width:${v}%"></i></span>`],
 ];
 let sortKey = "score", sortDir = -1;
-const naturalDir = k => ["walk", "rentMid", "allin", "ppsf", "name"].includes(k) ? 1 : -1;
+const naturalDir = k => ["walk", "rentMid", "allin", "ppsf", "name", "safety"].includes(k) ? 1 : -1;
 const sortArrows = k => `<span class="sort-arrows">${[[1, "▲", "sortAsc"], [-1, "▼", "sortDesc"]].map(([d, mark, label]) =>
   `<button type="button" data-k="${k}" data-dir="${d}" aria-label="${esc(t(label))}" title="${esc(t(label))}" class="${k === sortKey && d === sortDir ? "on" : ""}">${mark}</button>`).join("")}</span>`;
 function weightsAreDefault() { return WEIGHTS.every(([k, , d]) => weights[k] === d); }
@@ -495,12 +496,107 @@ function bindReviews(b) {
     el.onmousemove = e => { tip.hidden = false; tip.textContent = el.dataset.tip; tip.style.left = e.clientX + 12 + "px"; tip.style.top = e.clientY + 12 + "px"; };
     el.onmouseleave = () => tip.hidden = true; });
 }
+/* ---------- neighborhood ---------- */
+const NB_RULES = (D.city || {}).nearby || { brands: {}, transit: {} };
+const NB_GROUPS = [["grocery", "nbGrocery", "shopping-basket", "#2c9a68"], ["pharmacy", "nbPharmacy", "pill", "#cf4f76"], ["transit", "nbTransit", "train-front", "#4a63c9"],
+  ["dining", "nbDining", "utensils", "#d9821c"], ["outdoor", "nbOutdoor", "trees", "#5b8f35"]];
+const nbColor = id => NB_GROUPS.find(g => g[0] === id)[3];
+const nbMinutes = m => Math.max(1, Math.round(m / 80));
+const nbDistance = (b, p) => 6371000 * 1.25 * Math.hypot((p.lon - b.lon) * Math.PI / 180 * Math.cos(b.lat * Math.PI / 180), (p.lat - b.lat) * Math.PI / 180);
+const nbTransitMatch = (p, rule) => rule.network ? String(p.network).toLowerCase().includes(rule.network)
+  : /station|halt/.test(p.kind) && (rule.modes || []).includes(p.mode);
+const nbGroupOf = p => p.kind === "supermarket" ? "grocery" : /pharmacy|chemist/.test(p.kind) ? "pharmacy" : /station|halt|bus_stop/.test(p.kind) ? "transit"
+  : /restaurant|cafe|coffee/.test(p.kind) ? "dining" : /park|fitness_centre/.test(p.kind) && p.kind !== "water_park" ? "outdoor" : null;
+function nbModel(b) {
+  const pois = (window.POIS || []).map(p => ({ ...p, m: nbDistance(b, p) })).sort((x, y) => x.m - y.m);
+  const label = p => `${p.name || ""} ${p.brand || ""}`.toLowerCase();
+  const items = [], used = new Set(), missing = [];
+  const add = (p, group, sub, ic) => { if (used.has(p)) return; used.add(p); items.push({ p, group, sub, ic, m: p.m, name: p.name || sub }); };
+  const seen = new Set();
+  pois.filter(p => p.kind === "supermarket").forEach(p => { const key = (p.brand || p.name || "").toLowerCase(); if (!seen.has(key) && seen.size < 4) { seen.add(key); add(p, "grocery", "", "shopping-basket"); } });
+  Object.entries(NB_RULES.brands || {}).forEach(([key, word]) => { const p = pois.find(q => label(q).includes(word));
+    if (p) add(p, "grocery", t(key), "shopping-basket"); else missing.push(t(key)); });
+  pois.filter(p => /pharmacy|chemist/.test(p.kind)).slice(0, 3).forEach(p => add(p, "pharmacy", "", "pill"));
+  Object.entries(NB_RULES.transit || {}).forEach(([key, rule]) => pois.filter(p => nbTransitMatch(p, rule)).slice(0, rule.network ? 1 : 2)
+    .forEach(p => add(p, "transit", t(key), rule.network ? "train-front" : /mono|mover/.test(key + p.mode) ? "tram-front" : "train-front")));
+  const buses = pois.filter(p => p.kind === "bus_stop"), busNear = buses.filter(p => p.m <= 300).length;
+  if (buses[0]) add(buses[0], "transit", `${t("bus")} · ${busNear}`, "bus");
+  const eats = pois.filter(p => /restaurant|cafe/.test(p.kind)), inFive = eats.filter(p => p.m <= 400).length;
+  const named = pois.filter(p => /restaurant|cafe|coffee/.test(p.kind) && p.name);
+  named.slice(0, 6).forEach(p => add(p, "dining", t(p.kind === "restaurant" ? "nbRestaurant" : "nbCafe"), p.kind === "restaurant" ? "utensils" : "coffee"));
+  const extra = named.slice(6).filter(p => p.m <= 800);
+  pois.filter(p => p.kind === "park" && p.name).slice(0, 2).forEach(p => add(p, "outdoor", t("park"), "trees"));
+  pois.filter(p => p.kind === "fitness_centre").slice(0, 2).forEach(p => add(p, "outdoor", t("gym"), "dumbbell"));
+  pois.filter(p => p.kind === "dog_park" && p.m <= 800).slice(0, 1).forEach(p => add(p, "outdoor", t("nbDogPark"), "trees"));
+  extra.forEach(p => add(p, "dining", t(p.kind === "restaurant" ? "nbRestaurant" : "nbCafe"), p.kind === "restaurant" ? "utensils" : "coffee"));
+  items.forEach((x, i) => { x.i = i; x.extra = extra.includes(x.p); });
+  const dots = pois.filter(p => !used.has(p) && nbGroupOf(p) && p.m <= (p.kind === "bus_stop" ? 300 : 800));
+  return { items, dots, missing, inFive, busNear, extraCount: extra.length };
+}
+let nbState = null;
+function nbRow(x) {
+  const pct = Math.min(100, x.m / 16);
+  return `<button type="button" class="nb-row${x.extra ? " nb-extra" : ""}" data-i="${x.i}" ${x.extra ? "hidden" : ""}><span class="nb-ic" style="--c:${nbColor(x.group)}">${icon(x.ic)}</span>
+    <span class="nb-name"><b>${esc(x.name)}</b>${x.sub && x.sub !== x.name ? `<small>${esc(x.sub)}</small>` : ""}</span>
+    <span class="nb-dist"><b class="num">${nbMinutes(x.m)} ${t("min")}</b><small class="num">${Math.round(x.m)} m</small><i class="nb-bar"><i style="width:${pct}%;background:${nbColor(x.group)}"></i></i></span></button>`;
+}
+function nbTile(ic, color, value, label, sub) {
+  return `<div class="nb-tile"><span class="nb-ic" style="--c:${color}">${icon(ic)}</span><div><b>${value}</b><small>${esc(label)}</small>${sub ? `<em>${esc(sub)}</em>` : ""}</div></div>`;
+}
+function nbSafety(b) {
+  const z = b.safety; if (!z) return "";
+  const tone = /^A/.test(z.overall) ? "good" : /^[BC]/.test(z.overall) ? "mid" : "low";
+  return `<div class="nb-safety"><div class="nb-grade ${tone}"><b>${esc(z.overall)}</b><small>${t("nbSafety")}</small></div>
+    <div class="nb-safety-body"><div class="nb-subgrades"><span>${lang === "zh" ? "暴力犯罪" : "Violent crime"} <b>${esc(z.violent)}</b></span><span>${lang === "zh" ? "财产犯罪" : "Property crime"} <b>${esc(z.property)}</b></span></div>
+    <div class="nb-meter" role="img" aria-label="${esc(z.percentile)}%"><i style="width:${+z.percentile}%"></i></div><p class="muted">${safetyHtml(b).split("<br>")[1] || ""}</p></div></div>`;
+}
 function nearbyHtml(b) {
-  const n = b.nearby || {}, row = (k, label) => { const nm = n[k + "_name"], m = n[k + "_m"];
-    return `<dt>${t(label)}</dt><dd>${m ? `${esc(nm || "")} <span class="num muted">${Math.round(m)} m · ${Math.max(1, Math.round(m / 80))} ${t("min")}</span>` : `<span class="muted">${t("none")}</span>`}</dd>`; };
-  return `<dl class="kv">${((D.city || {}).nearby_rows || ["supermarket", "pharmacy"]).map(k => row(k, k)).join("")}
-    <dt>${t("bus")}</dt><dd class="num">${n.bus_stops_300m ?? "–"}</dd><dt>${t("restaurants")}</dt><dd class="num">${n.restaurants_400m ?? "–"}</dd>
-    ${row("park", "park")}${row("gym", "gym")}<dt>${t("safety")}</dt><dd>${safetyHtml(b)}</dd></dl><div id="pageMap"></div>`;
+  if (b.lat == null) return `<p class="muted">${t("noData")}</p>`;
+  const model = nbState = nbModel(b), first = id => model.items.find(x => x.group === id), grocery = first("grocery");
+  const rail = model.items.find(x => x.group === "transit" && x.ic !== "bus") || first("transit");
+  const sections = NB_GROUPS.map(([id, label, ic]) => { const rows = model.items.filter(x => x.group === id);
+    const none = id === "grocery" && model.missing.length ? `<p class="nb-missing">${t("nbNotFound")}: ${esc(model.missing.join(", "))}</p>` : "";
+    const head = id === "dining" ? ` <span class="muted">${t("nbWithin5")} · ${model.inFive}</span>` : id === "transit" ? ` <span class="muted">${t("nbBus300")} · ${model.busNear}</span>` : "";
+    const more = id === "dining" && model.extraCount ? `<button type="button" class="nb-more" id="nbMore">${t("nbShowAll")} (${model.extraCount})</button>` : "";
+    return `<section class="nb-group" data-group="${id}"><h4><span class="nb-ic small" style="--c:${nbColor(id)}">${icon(ic)}</span>${t(label)}${head}</h4>${rows.length ? rows.map(nbRow).join("") : `<p class="nb-missing">${t("none")}</p>`}${none}${more}</section>`; }).join("");
+  return `<div class="nb-tiles">
+      ${nbTile("shopping-basket", nbColor("grocery"), grocery ? `${nbMinutes(grocery.m)} ${t("min")}` : "–", t("nbGrocery"), grocery ? grocery.name : "")}
+      ${nbTile("train-front", nbColor("transit"), rail ? `${nbMinutes(rail.m)} ${t("min")}` : "–", t("nbTransit"), rail ? rail.name : "")}
+      ${nbTile("utensils", nbColor("dining"), model.inFive, t("nbDining"), t("nbFiveShort"))}
+      ${nbTile("shield", "#5a6670", b.safety ? esc(b.safety.overall) : "–", t("nbSafety"), b.zip ? `ZIP ${b.zip}` : "")}
+    </div>
+    <div class="nb-chips">${NB_GROUPS.map(([id, label, ic]) => `<button type="button" class="nb-chip on" data-group="${id}" aria-pressed="true" style="--c:${nbColor(id)}">${icon(ic)}${t(label)}</button>`).join("")}</div>
+    <div class="nb-body"><div class="nb-map"><div id="pageMap"></div></div><div class="nb-list" id="nbList">${sections}</div></div>
+    ${nbSafety(b)}<p class="muted nb-note">${t("nbNote")}</p>`;
+}
+function drawNeighborhood(pm, b) {
+  const model = nbState, layers = Object.fromEntries(NB_GROUPS.map(([id]) => [id, L.layerGroup().addTo(pm)]));
+  [[5, 400], [10, 800]].forEach(([min, walk]) => { const r = walk / 1.25;
+    L.circle([b.lat, b.lon], { radius: r, color: css("--accent"), weight: 1.2, dashArray: "4 6", fillColor: css("--accent"), fillOpacity: min === 5 ? .07 : .03, interactive: false }).addTo(pm);
+    L.marker([b.lat + r / 111320, b.lon], { interactive: false, keyboard: false, icon: L.divIcon({ className: "nb-ring", html: `<span>${min} ${t("min")}</span>`, iconSize: [60, 18], iconAnchor: [30, 9] }) }).addTo(pm); });
+  model.dots.forEach(p => { const id = nbGroupOf(p); L.circleMarker([p.lat, p.lon], { radius: p.kind === "bus_stop" ? 2.5 : 3.5, color: "#fff", weight: 1, fillColor: nbColor(id), fillOpacity: .85 }).bindTooltip(esc(p.name || t("bus"))).addTo(layers[id]); });
+  const rows = [...document.querySelectorAll(".nb-row")], pins = model.items.map(x => L.marker([x.p.lat, x.p.lon], { riseOnHover: true,
+    icon: L.divIcon({ className: "nb-mk", html: `<span class="nb-pin ${x.group}" style="--c:${nbColor(x.group)}">${icon(x.ic)}</span>`, iconSize: [26, 26], iconAnchor: [13, 13] }) }).bindTooltip(`${esc(x.name)} · ${nbMinutes(x.m)} ${t("min")}`, { direction: "top", offset: [0, -12] }));
+  model.items.forEach((x, i) => { if (!x.extra) pins[i].addTo(layers[x.group]); });
+  let line = null, pinned = null;
+  const mark = (i, pan) => { rows.forEach(r => r.classList.toggle("on", +r.dataset.i === i)); pins.forEach((m, j) => { const el = m.getElement(); if (el) el.classList.toggle("on", j === i); });
+    if (line) { line.remove(); line = null; } if (i == null) return;
+    const x = model.items[i]; if (!layers[x.group].hasLayer(pins[i])) pins[i].addTo(layers[x.group]);
+    pins[i].getElement()?.classList.add("on");
+    line = L.polyline([[b.lat, b.lon], [x.p.lat, x.p.lon]], { color: nbColor(x.group), weight: 2.5, dashArray: "6 6", interactive: false }).addTo(pm);
+    if (pan && !pm.getBounds().pad(-.1).contains(pins[i].getLatLng())) pm.fitBounds(L.latLngBounds([[b.lat, b.lon], [x.p.lat, x.p.lon]]).pad(.3)); };
+  rows.forEach(row => { const i = +row.dataset.i;
+    row.onclick = () => { pinned = pinned === i ? null : i; mark(pinned, true); };
+    if (!coarse) { row.onmouseenter = () => mark(i, false); row.onmouseleave = () => mark(pinned, false); } });
+  pins.forEach((pin, i) => pin.on("click", () => { pinned = i; mark(i, false); const list = document.getElementById("nbList"), row = rows[i];
+    if (row && !row.hidden && list.scrollHeight > list.clientHeight) list.scrollTop = row.offsetTop - list.offsetTop - 40; }));
+  document.querySelectorAll(".nb-chip").forEach(chip => chip.onclick = () => { const id = chip.dataset.group, on = !chip.classList.contains("on");
+    chip.classList.toggle("on", on); chip.setAttribute("aria-pressed", String(on)); on ? layers[id].addTo(pm) : layers[id].remove();
+    document.querySelector(`.nb-group[data-group="${id}"]`).hidden = !on; });
+  const more = document.getElementById("nbMore");
+  if (more) more.onclick = () => { rows.filter(r => r.classList.contains("nb-extra")).forEach(r => { r.hidden = false; }); model.items.forEach((x, i) => { if (x.extra) pins[i].addTo(layers.dining); }); more.remove(); };
+  L.marker([b.lat, b.lon], { zIndexOffset: 2000, keyboard: false, icon: L.divIcon({ className: "nb-self", html: `<span>${esc(b.name)}</span>`, iconSize: [0, 0] }) }).addTo(pm);
+  pm.fitBounds(L.latLng(b.lat, b.lon).toBounds(1500));
 }
 function safetyHtml(b) {
   const z = b.safety; if (!z) return `<span class="muted">${t("noData")}</span>`;
@@ -557,10 +653,9 @@ function drawPageMap(b) {
   BM.building.forEach(p => L.polygon(p, { renderer: R, stroke: false, fillColor: css("--bldg"), fillOpacity: 1 }).addTo(pm));
   BM.road.forEach(([c, , pts]) => L.polyline(pts, { renderer: R, color: c <= 2 ? css("--road-major") : css("--road"), weight: c <= 2 ? 4 : 2 }).addTo(pm));
   BM.rail.forEach(([k, pts]) => L.polyline(pts, { renderer: R, color: k === "mover" ? css("--mover") : css("--rail"), weight: 2 }).addTo(pm));
-  (window.POIS || []).forEach(p => { const color = p.kind === "supermarket" ? "#1baf7a" : /station|halt/.test(p.kind) ? css("--mover") : "#e87ba4";
-    L.circleMarker([p.lat, p.lon], { radius: 5, color: "#fff", weight: 1.5, fillColor: color, fillOpacity: 1 }).bindTooltip(esc(p.name || p.kind)).addTo(pm); });
-  L.circleMarker([b.lat, b.lon], { radius: 9, color: "#fff", weight: 2, fillColor: css("--accent"), fillOpacity: 1 }).bindTooltip(esc(b.name), { permanent: true, direction: "top" }).addTo(pm);
+  L.circleMarker([b.lat, b.lon], { radius: 9, color: "#fff", weight: 2, fillColor: css("--accent"), fillOpacity: 1, pane: "tooltipPane", interactive: false }).addTo(pm);
   L.marker([D.office.lat, D.office.lon], { icon: L.divIcon({ className: "marker", html: `<svg width="22" height="22" viewBox="0 0 26 26"><path d="M13 1.5l3.4 7.2 7.9.9-5.9 5.4 1.7 7.8L13 18.9 5.9 22.8l1.7-7.8L1.7 9.6l7.9-.9z" fill="#d1495b" stroke="#fff" stroke-width="1.5"/></svg>`, iconSize: [22, 22], iconAnchor: [11, 11] }) }).addTo(pm);
+  drawNeighborhood(pm, b);
 }
 function drawPage(id) {
   const b = byId[id], el = document.getElementById("pageView"); if (!b) { location.hash = ""; return; }
@@ -590,13 +685,13 @@ function drawPage(id) {
         <div class="panel"><h3>${t("costTitle")}</h3>${costHtml(b)}${incomeHtml(b)}</div>
       </div>
       ${goPanel(b)}${amenityPanel(b)}<div class="panel"><h3>${t("rent")}</h3><div style="overflow-x:auto"><table class="mini"><thead><tr><th>${t("type")}</th><th class="r">${t("low")}</th><th class="r">${t("mid")}</th><th class="r">${t("high")}</th><th class="r">ft²</th><th class="r">${t("n")}</th><th class="r">${t("allin")}</th></tr></thead><tbody>${rentRows || `<tr><td colspan="7" class="muted">${t("noData")}</td></tr>`}</tbody></table></div>${rentSources(b)}${concessionHtml(b)}</div>
+      <div class="panel nb-panel"><h3>${t("nearby")}</h3>${nearbyHtml(b)}</div>
       <div class="grid2">
         <div class="panel"><h3>${t("rules")}</h3>${rulesHtml(b)}</div>
         <div class="panel"><h3>${t("ratings")}</h3><table class="mini"><tbody>${b.ratings.map(r => `<tr><td>${esc(r.group === "overall" ? t("aptsOverall") : r.platform)}${r.group === "overall" ? ` <span class="chip est" title="${esc(t("aptsOverallNote"))}">${lang === "zh" ? "含建筑评级" : "includes building rating"}</span>` : ""}${r.group === "short_stay" ? ` <span class="chip est">${lang === "zh" ? "短住" : "short stay"}</span>` : ""}</td><td class="r"><span class="stars">${stars(r.score)}</span> <span class="num">${r.score.toFixed(1)}</span></td><td class="r num muted">${r.count}</td><td class="muted">${esc(r.via || "")}</td></tr>`).join("") || `<tr><td class="muted">${t("noData")}</td></tr>`}</tbody></table>${aptsNote(b)}</div>
       </div>
       <div class="panel"><h3>${lang === "zh" ? "户型图" : "Floor plans"}</h3>${floorPlansHtml(b)}</div>
       <div class="panel"><h3>${t("reviewTitle")}</h3>${reviewsHtml(b)}</div>
-      <div class="panel"><h3>${t("nearby")}</h3>${nearbyHtml(b)}</div>
       ${b.notes || b.conflicts ? `<div class="panel"><h3>${t("notes")}</h3><p class="muted" style="margin:0;overflow-wrap:anywhere">${esc([b.conflicts, b.notes].filter(Boolean).join(" "))}</p></div>` : ""}
       <div class="panel"><h3>${t("sources")}</h3><ul style="margin:0;padding-left:18px;overflow-wrap:anywhere">${(b.facts_source_urls || "").split(";").filter(Boolean).map(u => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join("")}</ul></div>
     </div>`;

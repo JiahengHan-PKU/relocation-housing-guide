@@ -7,8 +7,9 @@ The first guide covered 82 buildings in Miami. Its code, process and lessons are
 ## What it builds
 
 - **Map:** marker color shows rent and marker shape shows how you lease, on an embedded OpenStreetMap basemap.
-- **List:** sort and filter by rent, all-in cost, walking time, age, ratings, amenities and an adjustable score.
-- **Building pages:** rent by unit type with source and date, a worked all-in cost, concessions, rules, an AI review summary with pros and cons, nearby places, safety, floor plans, and links for 3D tours, in-person tours and leasing.
+- **List:** sort and filter by rent, all-in cost, walking time, age, ratings, safety, amenities and an adjustable score.
+- **Neighborhood explorer:** on each building page, a linked map and list of groceries, pharmacies, transit, food, parks and gyms, with walking rings, category toggles and safety grades.
+- **Building pages:** rent by unit type with source and date, a worked all-in cost, concessions, rules, an AI review summary with pros and cons, floor plans, and links for 3D tours, in-person tours and leasing.
 
 ## Use it with Claude Code
 

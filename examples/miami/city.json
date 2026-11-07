@@ -109,17 +109,7 @@
         "metrorail": "Metrorail",
         "brightline": "Brightline"
       }
-    },
-    "nearby_rows": [
-      "supermarket",
-      "publix",
-      "whole_foods",
-      "trader_joes",
-      "pharmacy",
-      "metromover",
-      "metrorail",
-      "brightline"
-    ]
+    }
   },
   "nearby": {
     "brands": {

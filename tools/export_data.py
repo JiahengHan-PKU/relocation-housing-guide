@@ -206,7 +206,7 @@ def export_data(data_dir, out_path):
             "review_summary": {k: summary.get(k) for k in ["summary_en", "summary_zh", "tags_en", "tags_zh",
                                                            "pros_en", "pros_zh", "cons_en", "cons_zh", "reviews_used"]} if summary else None,
         })
-    json.dump({"generated_on": CITY["as_of"], "office": CITY["office"], "city": CITY.get("page", {}), "assumptions": assumptions,
+    json.dump({"generated_on": CITY["as_of"], "office": CITY["office"], "city": {**CITY.get("page", {}), "nearby": CITY.get("nearby", {})}, "assumptions": assumptions,
                "buildings": out, "reviews": reviews,
                "floorplans": {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(f"{data_dir}/floorplans/*.json")}},
               open(out_path, "w"), ensure_ascii=False, separators=(",", ":"))

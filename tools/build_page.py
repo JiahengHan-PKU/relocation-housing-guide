@@ -48,8 +48,8 @@ def build_page(root, out_path):
             buffer = io.BytesIO()
             image.save(buffer, "JPEG", quality=58)
             photos[b["id"]] = "data:image/jpeg;base64," + base64.b64encode(buffer.getvalue()).decode()
-    pois = [p for p in json.loads(read("data/pois.json"))
-            if p["lat"] and p["kind"] in ("supermarket", "station", "halt", "pharmacy")]
+    pois = [{key: value for key, value in p.items() if value is not None}
+            for p in json.loads(read("data/pois.json")) if p["lat"]]
     icons = {}
     for path in glob.glob(os.path.join(root, "vendor/icons/*.svg")):
         icons[os.path.basename(path)[:-4]] = "".join(re.findall(r"<(?:path|circle|rect|line|polyline|polygon|ellipse)[^>]*/>", open(path).read()))

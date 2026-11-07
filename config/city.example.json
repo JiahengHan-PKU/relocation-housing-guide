@@ -21,7 +21,6 @@
   },
   "page": {
     "annual_base": null,
-    "nearby_rows": ["supermarket", "whole_foods", "trader_joes", "pharmacy", "subway"],
     "source_labels": {},
     "strings": {
       "en": {"title": "City Housing Guide", "subtitle": "Office address · data as of ", "subway": "Subway"},
