@@ -1,0 +1,149 @@
+{
+  "slug": "miami-brickell",
+  "as_of": "2026-11-07",
+  "output": "dist/brickell-housing.html",
+  "office": {
+    "lat": 25.766,
+    "lon": -80.192,
+    "address": "Brickell, Miami"
+  },
+  "geocode_suffix": "Miami, FL",
+  "listing_search_suffix": "Miami FL",
+  "walk_meters_per_minute": 80,
+  "basemap": {
+    "detail_bbox": [
+      25.742,
+      -80.212,
+      25.792,
+      -80.172
+    ],
+    "wide_bbox": [
+      25.7,
+      -80.27,
+      25.84,
+      -80.11
+    ],
+    "sea_points": [
+      [
+        -80.18,
+        25.77
+      ],
+      [
+        -80.178,
+        25.755
+      ],
+      [
+        -80.175,
+        25.785
+      ],
+      [
+        -80.17,
+        25.72
+      ],
+      [
+        -80.16,
+        25.81
+      ],
+      [
+        -80.115,
+        25.77
+      ],
+      [
+        -80.115,
+        25.72
+      ],
+      [
+        -80.14,
+        25.7
+      ]
+    ]
+  },
+  "pois_bbox": [
+    25.745,
+    -80.215,
+    25.79,
+    -80.175
+  ],
+  "source_rank": [
+    "Official site",
+    "Apartments.com",
+    "RentCafe",
+    "Miami Condo Solution"
+  ],
+  "owner_listing_source": "Miami Condo Solution",
+  "broker_source": "Bogatov Realty (MLS)",
+  "page": {
+    "annual_base": null,
+    "source_labels": {
+      "Miami Condo Solution": {
+        "en": "Miami Condo Solution, owner listings from MLS",
+        "zh": "Miami Condo Solution，MLS 业主挂牌"
+      },
+      "Bogatov Realty": {
+        "en": "Bogatov Realty, active MLS rentals",
+        "zh": "Bogatov Realty，MLS 在租挂牌"
+      }
+    },
+    "strings": {
+      "en": {
+        "title": "Brickell Housing Guide",
+        "subtitle": "Brickell, Miami · data as of ",
+        "kCondo": "Miami Condo Solution",
+        "kCbb": "Condo Black Book",
+        "galTitle": "Floor plans from Condo Black Book",
+        "amenNote": "From the building's site, Miami Condo Solution, Condo Black Book and Apartments.com. A missing amenity may simply be unlisted.",
+        "publix": "Publix",
+        "metromover": "Metromover",
+        "metrorail": "Metrorail",
+        "brightline": "Brightline"
+      },
+      "zh": {
+        "title": "Brickell 租房指南",
+        "subtitle": "Brickell, Miami · 数据日期 ",
+        "kCondo": "Miami Condo Solution",
+        "kCbb": "Condo Black Book",
+        "galTitle": "户型图（来自 Condo Black Book）",
+        "amenNote": "来自楼盘官网、Miami Condo Solution、Condo Black Book 和 Apartments.com。未列出不代表没有。",
+        "publix": "Publix",
+        "metromover": "Metromover",
+        "metrorail": "Metrorail",
+        "brightline": "Brightline"
+      }
+    },
+    "nearby_rows": [
+      "supermarket",
+      "publix",
+      "whole_foods",
+      "trader_joes",
+      "pharmacy",
+      "metromover",
+      "metrorail",
+      "brightline"
+    ]
+  },
+  "nearby": {
+    "brands": {
+      "publix": "publix",
+      "whole_foods": "whole foods",
+      "trader_joes": "trader joe"
+    },
+    "transit": {
+      "metromover": {
+        "modes": [
+          "monorail",
+          "people_mover",
+          "light_rail"
+        ]
+      },
+      "metrorail": {
+        "modes": [
+          "subway",
+          "train"
+        ]
+      },
+      "brightline": {
+        "network": "brightline"
+      }
+    }
+  }
+}

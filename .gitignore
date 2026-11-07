@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.DS_Store
+logs/
+dist/
+data/
+config/city.json
+web/data.json
+web/basemap.json

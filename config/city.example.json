@@ -1,0 +1,31 @@
+{
+  "slug": "my-city",
+  "as_of": "YYYY-MM-DD",
+  "output": "dist/housing-guide.html",
+  "office": {"lat": 0.0, "lon": 0.0, "address": "Office street address"},
+  "geocode_suffix": "City, ST",
+  "listing_search_suffix": "City ST",
+  "walk_meters_per_minute": 80,
+  "basemap": {
+    "detail_bbox": [0.0, 0.0, 0.0, 0.0],
+    "wide_bbox": [0.0, 0.0, 0.0, 0.0],
+    "sea_points": []
+  },
+  "pois_bbox": [0.0, 0.0, 0.0, 0.0],
+  "source_rank": ["Official site", "Apartments.com", "RentCafe"],
+  "owner_listing_source": "",
+  "broker_source": "Broker (MLS)",
+  "nearby": {
+    "brands": {"whole_foods": "whole foods", "trader_joes": "trader joe"},
+    "transit": {"subway": {"modes": ["subway", "train", "light_rail"]}}
+  },
+  "page": {
+    "annual_base": null,
+    "nearby_rows": ["supermarket", "whole_foods", "trader_joes", "pharmacy", "subway"],
+    "source_labels": {},
+    "strings": {
+      "en": {"title": "City Housing Guide", "subtitle": "Office address · data as of ", "subway": "Subway"},
+      "zh": {"title": "城市租房指南", "subtitle": "办公地址 · 数据日期 ", "subway": "地铁"}
+    }
+  }
+}

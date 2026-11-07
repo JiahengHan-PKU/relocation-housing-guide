@@ -1,0 +1,30 @@
+{
+  "apartment_tours": {
+    "panorama-tower": 22,
+    "solitair": 20,
+    "muze-met": 5,
+    "brickell-view-terrace": 6,
+    "1550-brickell": 6,
+    "magnus-brickell": 5,
+    "soma-brickell": 7,
+    "yacht-club-brickell": 2,
+    "brickell-first": 11,
+    "legacy-brickell": 1,
+    "flow-brickell": 1,
+    "alea-miami": 7
+  },
+  "phones": {
+    "panorama-tower": "(786) 920-0784",
+    "solitair": "(786) 460-2710",
+    "muze-met": "(786) 305-6771",
+    "brickell-view-terrace": "(786) 371-2513",
+    "legacy-brickell": "(786) 801-3910",
+    "1550-brickell": "(786) 477-4801",
+    "monarc-met-3": "(786) 527-2246",
+    "magnus-brickell": "(786) 946-5685",
+    "alea-miami": "(786) 789-2644",
+    "soma-brickell": "(786) 789-3380",
+    "brickell-first": "(786) 628-9860",
+    "flow-brickell": "(786) 723-8316"
+  }
+}
