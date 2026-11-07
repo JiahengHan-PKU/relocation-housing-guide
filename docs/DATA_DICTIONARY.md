@@ -157,4 +157,4 @@ Rating for building *i*: each platform score is shrunk toward that platform's me
 
 Each factor is first converted to a percentile rank from 0 to 1 across all buildings, so units do not affect the result. The default weights are 1B all-in cost 25, rating 15, walking time 15, safety 15, price per square foot 10, unit size 10 and building age 10. Viewers can change them with sliders.
 
-If a building lacks an input, its weight is shared across the remaining inputs. A building with no 1B all-in cost or walking time gets no score. When sorting by a single field, missing values go last in both directions.
+If a building lacks an input, its weight is shared across the remaining inputs. A building with no 1B all-in cost or walking time gets no score. When sorting by a single field, the down arrow runs best to worst, the up arrow runs worst to best, and missing values go last in both directions.

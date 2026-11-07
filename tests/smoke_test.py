@@ -19,6 +19,7 @@ def fill_demo(root):
     city = json.load(open(f"{root}/config/city.example.json"))
     city.update(as_of="2030-01-01", output="dist/demo.html", geocode_suffix="Demo City, ZZ")
     city["office"] = {"lat": 40.0, "lon": -75.0, "address": "1 Demo Plaza"}
+    city["basemap"]["wide_bbox"] = [39.9, -75.1, 40.1, -74.9]
     city["page"]["annual_base"] = 120000
     city["page"]["strings"]["en"].update(title="Demo City Guide", subtitle=FICTION + " Data as of ")
     json.dump(city, open(f"{root}/config/city.json", "w"))
@@ -78,6 +79,19 @@ def smoke_test():
             assert tab.locator(".nb-row").count() == 2 and tab.locator(".nb-pin").count() == 2
             tab.locator(".nb-row").first.click()
             assert tab.locator(".nb-mk.on").count() == 1
+            tab.evaluate("location.hash=''")
+            tab.wait_for_timeout(300)
+            marker = tab.locator('#map .leaflet-marker-icon[title="Harbor One"]')
+            marker.hover(force=True)
+            tab.wait_for_timeout(200)
+            assert tab.evaluate("document.getElementById('mapCard').hidden")
+            marker.dispatch_event("click")
+            assert not tab.evaluate("document.getElementById('mapCard').hidden")
+            tab.evaluate("[...document.querySelectorAll('button')].find(x => x.textContent.trim() === 'List').click()")
+            tab.click('th[data-k="rentMid"] button[data-dir="-1"]')
+            assert tab.locator("#ledger tbody tr b").first.inner_text() == "Harbor One"
+            tab.locator("#ledger tbody tr").nth(1).hover()
+            assert tab.evaluate("document.getElementById('listCard').hidden")
             summary = browser.new_page()
             summary.goto(f"file://{tmp}/dist/summary.html")
             assert summary.pdf(prefer_css_page_size=True)[:4] == b"%PDF"

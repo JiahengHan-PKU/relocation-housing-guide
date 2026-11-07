@@ -14,7 +14,9 @@ Basemap: run `tools/fetch_basemap.py`, then `tools/build_basemap.py`. For a coas
 ## Design rules
 
 - Encode price by color and rental channel by shape, so nothing relies on color alone.
-- Hover opens the panel on desktop. Tap opens it on phones.
+- A click opens the building panel in both the map and the list, and a tap opens it on phones. Hover shows only a name label. Hover-opened panels flicker while the mouse moves, and users found that tiresome.
+- Sorting means quality, not raw value. ▼ always runs best to worst, and ▲ worst to best, so rent, walking time and crime sort low first under ▼. Mark each column's better end in `LOWER_IS_BETTER`. Show the arrows on every column, keep missing values last in both directions, and give narrow screens a sort bar so hidden columns stay sortable.
+- Convert every score input to a percentile rank before weighting, so dollars, square feet and rating points are comparable. Explain this next to the weights. Percentile ranks stretch clustered values, such as ratings, and flatten real gaps, so say so when presenting scores.
 - Put source and date beside every rent.
 - Filters apply to both map and list. Say "listed", never "not available", when an amenity is absent from a source.
 - Provide modules for 3D tours, in-person tours and leasing links, built from verified links.
@@ -37,6 +39,6 @@ Basemap: run `tools/fetch_basemap.py`, then `tools/build_basemap.py`. For a coas
 
 ## Test
 
-Open every building page on WebKit and Chrome at desktop and phone widths, and fail on script errors or horizontal overflow. `tests/smoke_test.py` covers the pipeline from an empty folder. After a change to shared tools, rebuild an existing city and compare `web/data.json` with the previous output.
+Open every building page on WebKit and Chrome at desktop and phone widths, and fail on script errors or horizontal overflow. Test a second city too: a run on the original city cannot reveal coordinates left in the code, which is how a hardcoded main map once survived. `tests/smoke_test.py` covers the pipeline from an empty folder. After a change to shared tools, rebuild an existing city and compare `web/data.json` with the previous output.
 
 Finally, open the file on a real phone by the route readers will use. A headless test does not prove this.
