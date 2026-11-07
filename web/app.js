@@ -16,7 +16,7 @@ const T = {
     ratings: "Ratings", reviews: "reviews", open: "Open building page", site: "Official site",
     studio: "Studio", "1b": "1 bed", "1b_den": "1 bed + den", "2b": "2 bed", "3b_plus": "3+ bed",
     name: "Building", score: "Score", rating: "Rating", size: "1B size", ppsf: "$/sqft", age: "Building age",
-    google: "Google", apts: "Apts.com", weights: "Score weights", aptsNone: "Apartments.com: no renter ratings yet", aptsMissing: "Apartments.com: building page not found",  aptsOverall: "Apartments.com overall", aptsOverallNote: "Apartments.com's 5-star score blends renter reviews with the CoStar building rating. It is left out of this guide's score.", goTitle: "See it and rent it", goVirtual: "3D virtual tours", goTour: "Book an in-person tour", goRent: "Rent or apply", goVirtualNone: "No 3D tour found. Ask the leasing office or a listing agent for a video walkthrough.", goTip: "Many leasing offices close on Sundays, so book weekdays and Saturdays first.", goCondoNote: "Units are leased by individual owners. Book through a listing agent.", phoneLabel: "Leasing office", kOfficial: "Official site", kOfficialTour: "Book on the official site", kOfficialApply: "Apply on the official site", kApartments: "Apartments.com", kApartmentsTour: "Request a tour on Apartments.com", k3d: "Apartments.com 3D tours", kVideo: "Official video tour", kCondo: "Owner listings", kCondoSub: "Live owner listings; agents arrange showings", kCbb: "Condo database", kCbbSub: "Listings and floor plans", kZillow: "Zillow", kZillowSub: "Address search", galTitle: "Listing floor plans", galNote: "Original listing images, shown online only. Open one to see it full size.", galAll: "All", galPlans: "plans", filters: "Filters", amenities: "Amenities", amenNote: "From the building's site and listing platforms. A missing amenity may simply be unlisted.", amenNone: "No amenity list found yet.",
+    google: "Google", apts: "Apts.com", walkHead: "Walk", weights: "Score weights", weightsNote: "Each factor becomes a percentile rank from 0 to 1 across all buildings before weighting, so dollars, square feet and rating points are comparable. A missing factor's weight is shared across the others, except that a building with no 1B all-in cost gets no score.", sortBy: "Sort by", sortAsc: "Ascending", sortDesc: "Descending", aptsNone: "Apartments.com: no renter ratings yet", aptsMissing: "Apartments.com: building page not found",  aptsOverall: "Apartments.com overall", aptsOverallNote: "Apartments.com's 5-star score blends renter reviews with the CoStar building rating. It is left out of this guide's score.", goTitle: "See it and rent it", goVirtual: "3D virtual tours", goTour: "Book an in-person tour", goRent: "Rent or apply", goVirtualNone: "No 3D tour found. Ask the leasing office or a listing agent for a video walkthrough.", goTip: "Many leasing offices close on Sundays, so book weekdays and Saturdays first.", goCondoNote: "Units are leased by individual owners. Book through a listing agent.", phoneLabel: "Leasing office", kOfficial: "Official site", kOfficialTour: "Book on the official site", kOfficialApply: "Apply on the official site", kApartments: "Apartments.com", kApartmentsTour: "Request a tour on Apartments.com", k3d: "Apartments.com 3D tours", kVideo: "Official video tour", kCondo: "Owner listings", kCondoSub: "Live owner listings; agents arrange showings", kCbb: "Condo database", kCbbSub: "Listings and floor plans", kZillow: "Zillow", kZillowSub: "Address search", galTitle: "Listing floor plans", galNote: "Original listing images, shown online only. Open one to see it full size.", galAll: "All", galPlans: "plans", filters: "Filters", amenities: "Amenities", amenNote: "From the building's site and listing platforms. A missing amenity may simply be unlisted.", amenNone: "No amenity list found yet.",
     fRent: "1B rent up to", fAllin: "All-in up to", fWalk: "Walk up to", fRating: "Rating at least", fYear: "Built from", fAny: "any", fTypes: "Building type", fAmen: "Must have", fMore: "Also", fHas1b: "Has 1B price", fPlans: "Has floor plans", fOffer: "Has an offer", fReset: "Clear filters", fShow: "buildings match", fPricedOnly: "Price filters hide buildings with no 1B price.", weightsReset: "Reset to default", weightsCustom: "adjusted", safety: "Safety", noData: "No data yet",
     back: "Back to list", backMap: "Back to map", facts: "Building facts", about: "About", architect: "Architect", manager: "Manager",
     channel: "How you rent", address: "Address", costTitle: "Monthly cost, 1 bed", fees: "Mandatory building fees",
@@ -47,7 +47,7 @@ const T = {
     ratings: "评分", reviews: "条评论", open: "打开楼盘页", site: "官网",
     studio: "开间", "1b": "一居", "1b_den": "一居+书房", "2b": "两居", "3b_plus": "三居及以上",
     name: "楼盘", score: "综合分", rating: "评分", size: "1B 面积", ppsf: "每平尺", age: "楼龄",
-    google: "Google", apts: "Apts.com", weights: "评分权重", aptsNone: "Apartments.com：暂无住户评分", aptsMissing: "Apartments.com：未找到楼栋页",  aptsOverall: "Apartments.com 综合星级", aptsOverallNote: "Apartments.com 的 5 星综合评分，由住户评分和 CoStar 建筑评级混合而成，不计入本指南的综合评分。", goTitle: "看房与租房", goVirtual: "3D 虚拟看房", goTour: "预约线下看房", goRent: "租房与申请", goVirtualNone: "没有找到 3D 看房。可以向租赁办公室或挂牌经纪索要视频。", goTip: "不少租赁办公室周日不开门，建议优先约工作日和周六。", goCondoNote: "这栋楼由业主个人出租，需要通过挂牌经纪预约。", phoneLabel: "租赁办公室", kOfficial: "官方网站", kOfficialTour: "在官网预约", kOfficialApply: "在官网申请", kApartments: "Apartments.com", kApartmentsTour: "在 Apartments.com 预约", k3d: "Apartments.com 3D 看房", kVideo: "官方视频看房", kCondo: "业主挂牌", kCondoSub: "实时业主挂牌，经纪可安排看房", kCbb: "公寓数据库", kCbbSub: "挂牌与户型图", kZillow: "Zillow", kZillowSub: "按地址搜索", galTitle: "挂牌户型图", galNote: "挂牌平台原图，需联网显示。点开可看大图。", galAll: "全部", galPlans: "个户型", filters: "筛选", amenities: "设施", amenNote: "来自楼盘官网和挂牌平台。未列出不代表没有。", amenNone: "暂未找到设施列表。",
+    google: "Google", apts: "Apts.com", walkHead: "步行", weights: "评分权重", weightsNote: "每一项都先换算成所有楼中的百分位排名（0 到 1），再按权重相加，所以美元、平方英尺和评分的单位差异不会影响结果。某栋楼缺某一项时，该项权重分摊给其余项；但没有 1B 月总成本的楼不计分。", sortBy: "排序方式", sortAsc: "升序", sortDesc: "降序", aptsNone: "Apartments.com：暂无住户评分", aptsMissing: "Apartments.com：未找到楼栋页",  aptsOverall: "Apartments.com 综合星级", aptsOverallNote: "Apartments.com 的 5 星综合评分，由住户评分和 CoStar 建筑评级混合而成，不计入本指南的综合评分。", goTitle: "看房与租房", goVirtual: "3D 虚拟看房", goTour: "预约线下看房", goRent: "租房与申请", goVirtualNone: "没有找到 3D 看房。可以向租赁办公室或挂牌经纪索要视频。", goTip: "不少租赁办公室周日不开门，建议优先约工作日和周六。", goCondoNote: "这栋楼由业主个人出租，需要通过挂牌经纪预约。", phoneLabel: "租赁办公室", kOfficial: "官方网站", kOfficialTour: "在官网预约", kOfficialApply: "在官网申请", kApartments: "Apartments.com", kApartmentsTour: "在 Apartments.com 预约", k3d: "Apartments.com 3D 看房", kVideo: "官方视频看房", kCondo: "业主挂牌", kCondoSub: "实时业主挂牌，经纪可安排看房", kCbb: "公寓数据库", kCbbSub: "挂牌与户型图", kZillow: "Zillow", kZillowSub: "按地址搜索", galTitle: "挂牌户型图", galNote: "挂牌平台原图，需联网显示。点开可看大图。", galAll: "全部", galPlans: "个户型", filters: "筛选", amenities: "设施", amenNote: "来自楼盘官网和挂牌平台。未列出不代表没有。", amenNone: "暂未找到设施列表。",
     fRent: "1B 租金上限", fAllin: "每月合计上限", fWalk: "步行上限", fRating: "评分不低于", fYear: "建成不早于", fAny: "不限", fTypes: "楼盘类型", fAmen: "必须有", fMore: "其他", fHas1b: "有 1B 价格", fPlans: "有户型图", fOffer: "有当前优惠", fReset: "清除筛选", fShow: "栋符合", fPricedOnly: "价格筛选会隐藏没有 1B 价格的楼。", weightsReset: "恢复默认", weightsCustom: "已调整", safety: "治安", noData: "暂无数据",
     back: "返回列表", backMap: "返回地图", facts: "基本信息", about: "简介", architect: "建筑师", manager: "物业",
     channel: "租房方式", address: "地址", costTitle: "一居每月开销", fees: "大楼强制费用",
@@ -267,7 +267,7 @@ function cardHtml(b) {
 }
 function showCard(el, b, pinned) {
   el.innerHTML = cardHtml(b); el.hidden = false; el.dataset.id = b.id; el.dataset.pinned = pinned ? "1" : "";
-  el.querySelector(".close").onclick = () => { el.hidden = true; el.dataset.pinned = ""; };
+  el.querySelector(".close").onclick = () => { el.hidden = true; el.dataset.pinned = ""; document.querySelectorAll("#ledger tr.active").forEach(x => x.classList.remove("active")); };
 }
 let hideTimer = null;
 function hoverCard(el, b) { if (el.dataset.pinned && el.dataset.id !== b.id) return; clearTimeout(hideTimer); showCard(el, b, false); }
@@ -379,7 +379,7 @@ function initMap() {
 const OPT = { year: "opt", floors: "opt", size: "opt", ppsf: "opt", apts: "opt", rating: "opt", rentMid: "opt2", google: "opt3" };
 const COLS = [
   ["name", "name", b => b.name, v => null],
-  ["walk", "walk", b => M[b.id].walk, v => v == null ? "–" : `${Math.round(v)} ${t("min")}`],
+  ["walk", "walkHead", b => M[b.id].walk, v => v == null ? "–" : `${Math.round(v)} ${t("min")}`],
   ["year", "year", b => b.year_built, v => v ?? "–"],
   ["floors", "floors", b => b.floors, v => v ?? "–"],
   ["rentMid", "mid", b => M[b.id].rentMid, money],
@@ -392,12 +392,16 @@ const COLS = [
   ["score", "score", b => M[b.id].score, v => v == null ? "–" : `${Math.round(v)}<span class="scorebar"><i style="width:${v}%"></i></span>`],
 ];
 let sortKey = "score", sortDir = -1;
+const naturalDir = k => ["walk", "rentMid", "allin", "ppsf", "name"].includes(k) ? 1 : -1;
+const sortArrows = k => `<span class="sort-arrows">${[[1, "▲", "sortAsc"], [-1, "▼", "sortDesc"]].map(([d, mark, label]) =>
+  `<button type="button" data-k="${k}" data-dir="${d}" aria-label="${esc(t(label))}" title="${esc(t(label))}" class="${k === sortKey && d === sortDir ? "on" : ""}">${mark}</button>`).join("")}</span>`;
 function weightsAreDefault() { return WEIGHTS.every(([k, , d]) => weights[k] === d); }
 function drawWeights() {
   const el = document.getElementById("weights");
   document.getElementById("weightsSum").textContent = t("weights");
   document.getElementById("weightsState").textContent = weightsAreDefault() ? "" : "· " + t("weightsCustom");
   document.getElementById("weightsReset").textContent = t("weightsReset");
+  document.getElementById("weightsNote").textContent = t("weightsNote");
   el.innerHTML = WEIGHTS.map(([k, label]) => `<label class="w-item"><span class="w-head"><span>${t(label)}</span><span class="num" id="w-${k}-v">${weights[k]}</span></span>
     <input type="range" min="0" max="50" step="5" id="w-${k}" value="${weights[k]}" style="--p:${weights[k] * 2}%"></label>`).join("");
   WEIGHTS.forEach(([k]) => { const i = document.getElementById("w-" + k); i.oninput = () => { weights[k] = +i.value; i.style.setProperty("--p", weights[k] * 2 + "%");
@@ -418,19 +422,26 @@ function drawList() {
       if (va == null && vb == null) return 0; if (va == null) return 1; if (vb == null) return -1;
       return (typeof va === "string" ? va.localeCompare(vb) : va - vb) * sortDir; });
   const tbl = document.getElementById("ledger");
-  tbl.innerHTML = `<thead><tr>${COLS.map(([k, label]) => `<th data-k="${k}" class="${OPT[k] || ""}" ${k === sortKey ? `aria-sort="${sortDir > 0 ? "ascending" : "descending"}"` : ""}>${t(label)} ${k === sortKey ? (sortDir > 0 ? "▲" : "▼") : ""}</th>`).join("")}</tr></thead>
+  tbl.innerHTML = `<thead><tr>${COLS.map(([k, label]) => `<th data-k="${k}" class="${OPT[k] || ""}" ${k === sortKey ? `aria-sort="${sortDir > 0 ? "ascending" : "descending"}"` : ""}><span class="th-in">${t(label)}${sortArrows(k)}</span></th>`).join("")}</tr></thead>
   <tbody>${rows.map(b => `<tr data-id="${b.id}" tabindex="0">${COLS.map(([k, , get, fmt], i) => i === 0
       ? `<td><span class="name-cell">${shapeSvg(b.channel_primary, priceColor(b), 14)}<b>${esc(b.name)}</b> <span class="muted">${esc(t(b.building_type))}</span></span></td>`
       : `<td class="num ${OPT[k] || ""}">${fmt(get(b), b)}</td>`).join("")}</tr>`).join("")}</tbody>`;
   tbl.querySelectorAll("th").forEach(th => th.onclick = () => { const k = th.dataset.k;
-    if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = ["walk", "rentMid", "allin", "ppsf", "name"].includes(k) ? 1 : -1; } drawList(); });
+    if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = naturalDir(k); } drawList(); });
+  tbl.querySelectorAll(".sort-arrows button").forEach(btn => btn.onclick = e => { e.stopPropagation();
+    sortKey = btn.dataset.k; sortDir = +btn.dataset.dir; drawList(); });
+  const select = document.getElementById("sortSelect"), dirBtn = document.getElementById("sortDir");
+  select.innerHTML = COLS.map(([k, label]) => `<option value="${k}">${esc(t(label))}</option>`).join("");
+  select.value = sortKey;
+  select.onchange = () => { sortKey = select.value; sortDir = naturalDir(sortKey); drawList(); };
+  dirBtn.textContent = sortDir > 0 ? `▲ ${t("sortAsc")}` : `▼ ${t("sortDesc")}`;
+  dirBtn.onclick = () => { sortDir = -sortDir; drawList(); };
+  document.getElementById("sortLabel").textContent = t("sortBy");
   const card = document.getElementById("listCard");
   tbl.querySelectorAll("tbody tr").forEach(tr => { const b = byId[tr.dataset.id];
-    if (!coarse) { tr.onmouseenter = () => { tbl.querySelectorAll("tr.active").forEach(x => x.classList.remove("active")); tr.classList.add("active"); hoverCard(card, b); };
-      tr.onmouseleave = () => leaveCard(card); }
-    tr.onclick = () => showCard(card, b, true);
+    tr.classList.toggle("active", !card.hidden && card.dataset.id === b.id);
+    tr.onclick = () => { tbl.querySelectorAll("tr.active").forEach(x => x.classList.remove("active")); tr.classList.add("active"); showCard(card, b, true); };
     tr.onkeydown = e => { if (e.key === "Enter") location.hash = "#b-" + b.id; }; });
-  card.onmouseleave = () => leaveCard(card);
 }
 
 /* ---------- building page ---------- */

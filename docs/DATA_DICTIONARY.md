@@ -155,6 +155,6 @@ Every pro and con must appear in several reviews or in a sourced fact. A theme r
 
 Rating for building *i*: each platform score is shrunk toward that platform's mean across all buildings, S = (v·R + m·C) / (v + m), with v = review count and m = 20. Platforms are then averaged, weighted by v. A platform with no review count is shown but left out of this calculation.
 
-The default composite uses equal weights on four percentile ranks: 1B median rent (lower is better), walking distance (shorter is better), year built (newer is better) and rating. Viewers can change the weights with sliders.
+Each factor is first converted to a percentile rank from 0 to 1 across all buildings, so units do not affect the result. The default weights are 1B all-in cost 25, rating 15, walking time 15, safety 15, price per square foot 10, unit size 10 and building age 10. Viewers can change them with sliders.
 
-If a building lacks an input, its weight is shared across the remaining inputs and the row shows a coverage marker. When sorting by a single field, missing values go last in both directions.
+If a building lacks an input, its weight is shared across the remaining inputs. A building with no 1B all-in cost or walking time gets no score. When sorting by a single field, missing values go last in both directions.

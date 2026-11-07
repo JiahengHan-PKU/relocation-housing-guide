@@ -176,6 +176,16 @@ table.ledger th { position: sticky; top: 0; background: var(--surface); text-ali
   color: var(--muted); padding: 10px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; cursor: pointer; user-select: none; }
 table.ledger th:first-child, table.ledger td:first-child { text-align: left; }
 table.ledger th[aria-sort] { color: var(--ink); }
+.th-in { display: inline-flex; align-items: center; gap: 5px; }
+.sort-arrows { display: inline-flex; flex-direction: column; line-height: 1; }
+.sort-arrows button { all: unset; cursor: pointer; font-size: 8px; line-height: 9px; padding: 0 2px; color: var(--muted); opacity: .45; }
+.sort-arrows button:hover, .sort-arrows button:focus-visible { opacity: 1; color: var(--ink); }
+.sort-arrows button.on { opacity: 1; color: var(--accent); }
+.sort-bar { display: none; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; color: var(--muted); }
+.sort-bar select, .sort-bar button { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-height: 36px; }
+.sort-bar select { flex: 1; min-width: 0; }
+@media (max-width: 1100px) { .sort-bar { display: flex; } }
+.w-note { margin: 10px 0 0; font-size: 12px; line-height: 1.5; color: var(--muted); }
 table.ledger td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 table.ledger tbody tr { cursor: pointer; }
 table.ledger tbody tr:hover, table.ledger tbody tr.active { background: var(--accent-soft); }
@@ -270,8 +280,9 @@ table.ledger tbody tr:hover, table.ledger tbody tr.active { background: var(--ac
     <div class="list-tools">
       <input type="search" id="q" data-i18n-ph="search">
       <button type="button" class="w-toggle" id="weightsToggle" aria-expanded="false" aria-controls="weightsPanel"><span id="weightsSum"></span><span class="w-state" id="weightsState"></span><svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div id="weightsPanel" hidden><div class="weights-grid" id="weights"></div><div class="w-foot"><button type="button" class="w-reset" id="weightsReset"></button></div></div>
+      <div id="weightsPanel" hidden><div class="weights-grid" id="weights"></div><p class="w-note" id="weightsNote"></p><div class="w-foot"><button type="button" class="w-reset" id="weightsReset"></button></div></div>
     </div>
+    <div class="sort-bar"><label for="sortSelect" id="sortLabel"></label><select id="sortSelect"></select><button type="button" id="sortDir"></button></div>
     <div class="table-wrap"><table class="ledger" id="ledger"></table></div>
     <aside class="card" id="listCard" hidden></aside>
   </section>
