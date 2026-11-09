@@ -151,6 +151,10 @@ Every pro and con must appear in several reviews or in a sourced fact. A theme r
 
 `data/raw/apartments_overall.csv` holds the Apartments.com 5-star overall score, which blends renter reviews with the CoStar building rating. It is shown separately and left out of the weighted score. `status` is `stars`, `no_ratings` or `page_not_found`. Accept a page only when the address and street both match, because 1010 Brickell Ave and 1010 SW 2nd Ave share a number. Carbonell is the one recorded exception: Apartments.com gives 681 Brickell Key Dr, but the name, 2005 build year and 39 stories match. `page_not_found` means only single-unit pages turned up.
 
+## starred.json (optional)
+
+A JSON list of building ids, for example `["building-a", "building-b"]`. `export_data.py` copies it into `data.json` as `starred_default`, the shortlist every viewer sees first. A viewer's own star toggles are stored in their browser and take precedence there. Leave the file out for an empty default.
+
 ## Weighted score
 
 Rating for building *i*: each platform score is shrunk toward that platform's mean across all buildings, S = (v·R + m·C) / (v + m), with v = review count and m = 20. Platforms are then averaged, weighted by v. A platform with no review count is shown but left out of this calculation.

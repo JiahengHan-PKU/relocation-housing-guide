@@ -209,7 +209,8 @@ def export_data(data_dir, out_path):
     json.dump({"generated_on": CITY["as_of"], "office": CITY["office"],
                "map_bounds": [CITY["basemap"]["wide_bbox"][:2], CITY["basemap"]["wide_bbox"][2:]], "city": {**CITY.get("page", {}), "nearby": CITY.get("nearby", {})}, "assumptions": assumptions,
                "buildings": out, "reviews": reviews,
-               "floorplans": {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(f"{data_dir}/floorplans/*.json")}},
+               "floorplans": {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(f"{data_dir}/floorplans/*.json")},
+               "starred_default": json.load(open(f"{data_dir}/starred.json")) if os.path.exists(f"{data_dir}/starred.json") else []},
               open(out_path, "w"), ensure_ascii=False, separators=(",", ":"))
     return len(out), sum(len(v) for v in reviews.values())
 

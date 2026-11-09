@@ -67,6 +67,15 @@ main { position: relative; }
   border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12px; box-shadow: var(--shadow); max-width: 300px; }
 .legend .seg { margin: 0 0 6px; }
 .legend .seg button { padding: 2px 8px; font-size: 11px; }
+.star-btn { border: 0; background: transparent; cursor: pointer; color: var(--muted); font-size: 18px; line-height: 1; padding: 2px 4px; }
+.star-btn[aria-pressed="true"] { color: var(--star); }
+.star-btn.on-photo { color: rgba(255,255,255,.85); text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+.star-btn.on-photo[aria-pressed="true"] { color: var(--star); }
+.star-title { display: flex; align-items: center; gap: 4px; }
+th.star-cell, td.star-cell { width: 34px; padding-left: 6px; padding-right: 0; text-align: center; }
+.marker.starred { z-index: 500; }
+.star-badge { position: absolute; right: -8px; top: -9px; color: var(--star); font-size: 13px; line-height: 1; text-shadow: 0 0 2px var(--surface), 0 0 2px var(--surface); pointer-events: none; }
+.star-key { color: var(--star); }
 .legend h4 { margin: 0 0 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
 .ramp { display: flex; gap: 2px; margin: 4px 0 2px; }
 .ramp i { flex: 1; height: 10px; border-radius: 3px; }

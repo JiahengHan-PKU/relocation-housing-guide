@@ -18,7 +18,7 @@ const T = {
     name: "Building", score: "Score", rating: "Rating", size: "1B size", ppsf: "$/sqft", age: "Building age",
     google: "Google", apts: "Apts.com", walkHead: "Walk", nbGrocery: "Groceries", nbPharmacy: "Pharmacies", nbTransit: "Transit", nbDining: "Food and coffee", nbOutdoor: "Parks and gyms", nbSafety: "Safety", nbRestaurant: "Restaurant", nbCafe: "Cafe", nbDogPark: "Dog park", nbWithin5: "within a 5-minute walk", nbFiveShort: "5-min walk", nbBus300: "bus stops within 300 m", nbShowAll: "Show all within a 10-minute walk", nbNotFound: "Not in our data for this area", nbNote: "Walking times are estimates: straight-line distance × 1.25 at 80 m a minute. Places come from OpenStreetMap, which may miss some restaurants. Select a place to draw it on the map.", weights: "Score weights", weightsNote: "Each factor becomes a percentile rank from 0 to 1 across all buildings before weighting, so dollars, square feet and rating points are comparable. A missing factor's weight is shared across the others, except that a building with no 1B all-in cost gets no score.", sortBy: "Sort by", sortAsc: "Worst to best", sortDesc: "Best to worst", aptsNone: "Apartments.com: no renter ratings yet", aptsMissing: "Apartments.com: building page not found",  aptsOverall: "Apartments.com overall", aptsOverallNote: "Apartments.com's 5-star score blends renter reviews with the CoStar building rating. It is left out of this guide's score.", goTitle: "See it and rent it", goVirtual: "3D virtual tours", goTour: "Book an in-person tour", goRent: "Rent or apply", goVirtualNone: "No 3D tour found. Ask the leasing office or a listing agent for a video walkthrough.", goTip: "Many leasing offices close on Sundays, so book weekdays and Saturdays first.", goCondoNote: "Units are leased by individual owners. Book through a listing agent.", phoneLabel: "Leasing office", kOfficial: "Official site", kOfficialTour: "Book on the official site", kOfficialApply: "Apply on the official site", kApartments: "Apartments.com", kApartmentsTour: "Request a tour on Apartments.com", k3d: "Apartments.com 3D tours", kVideo: "Official video tour", kCondo: "Owner listings", kCondoSub: "Live owner listings; agents arrange showings", kCbb: "Condo database", kCbbSub: "Listings and floor plans", kZillow: "Zillow", kZillowSub: "Address search", galTitle: "Listing floor plans", galNote: "Original listing images, shown online only. Open one to see it full size.", galAll: "All", galPlans: "plans", filters: "Filters", amenities: "Amenities", amenNote: "From the building's site and listing platforms. A missing amenity may simply be unlisted.", amenNone: "No amenity list found yet.",
     fRent: "1B rent up to", fAllin: "All-in up to", fWalk: "Walk up to", fRating: "Rating at least", fYear: "Built from", fAny: "any", fTypes: "Building type", fAmen: "Must have", fMore: "Also", fHas1b: "Has 1B price", fPlans: "Has floor plans", fOffer: "Has an offer", fReset: "Clear filters", fShow: "buildings match", fPricedOnly: "Price filters hide buildings with no 1B price.", weightsReset: "Reset to default", weightsCustom: "adjusted", safety: "Safety", noData: "No data yet",
-    back: "Back to list", backMap: "Back to map", facts: "Building facts", about: "About", architect: "Architect", manager: "Manager",
+    back: "Back to list", backMap: "Back to map", star: "Star", unstar: "Remove star", starHead: "★", starred: "Starred", fStarred: "Starred only", facts: "Building facts", about: "About", architect: "Architect", manager: "Manager",
     channel: "How you rent", address: "Address", costTitle: "Monthly cost, 1 bed", fees: "Mandatory building fees",
     electricity: "Electricity (FPL)", water_sewer: "Water & sewer", internet: "Internet", renters_insurance: "Renters insurance",
     total: "All-in per month", estimate: "estimate", actual: "actual", base: "Base rent (median)", onetime: "One-time charges",
@@ -49,7 +49,7 @@ const T = {
     name: "楼盘", score: "综合分", rating: "评分", size: "1B 面积", ppsf: "每平尺", age: "楼龄",
     google: "Google", apts: "Apts.com", walkHead: "步行", nbGrocery: "超市", nbPharmacy: "药店", nbTransit: "交通", nbDining: "餐饮咖啡", nbOutdoor: "公园与健身", nbSafety: "治安", nbRestaurant: "餐厅", nbCafe: "咖啡馆", nbDogPark: "狗公园", nbWithin5: "步行 5 分钟内", nbFiveShort: "步行 5 分钟内", nbBus300: "300 米内公交站", nbShowAll: "显示 10 分钟步行范围内全部", nbNotFound: "本区域数据未收录", nbNote: "步行时间为估算：直线距离 × 1.25，按每分钟 80 米计算。地点来自 OpenStreetMap，餐饮可能不全。点选地点可在地图上画出路线方向。", weights: "评分权重", weightsNote: "每一项都先换算成所有楼中的百分位排名（0 到 1），再按权重相加，所以美元、平方英尺和评分的单位差异不会影响结果。某栋楼缺某一项时，该项权重分摊给其余项；但没有 1B 月总成本的楼不计分。", sortBy: "排序方式", sortAsc: "从差到好", sortDesc: "从好到差", aptsNone: "Apartments.com：暂无住户评分", aptsMissing: "Apartments.com：未找到楼栋页",  aptsOverall: "Apartments.com 综合星级", aptsOverallNote: "Apartments.com 的 5 星综合评分，由住户评分和 CoStar 建筑评级混合而成，不计入本指南的综合评分。", goTitle: "看房与租房", goVirtual: "3D 虚拟看房", goTour: "预约线下看房", goRent: "租房与申请", goVirtualNone: "没有找到 3D 看房。可以向租赁办公室或挂牌经纪索要视频。", goTip: "不少租赁办公室周日不开门，建议优先约工作日和周六。", goCondoNote: "这栋楼由业主个人出租，需要通过挂牌经纪预约。", phoneLabel: "租赁办公室", kOfficial: "官方网站", kOfficialTour: "在官网预约", kOfficialApply: "在官网申请", kApartments: "Apartments.com", kApartmentsTour: "在 Apartments.com 预约", k3d: "Apartments.com 3D 看房", kVideo: "官方视频看房", kCondo: "业主挂牌", kCondoSub: "实时业主挂牌，经纪可安排看房", kCbb: "公寓数据库", kCbbSub: "挂牌与户型图", kZillow: "Zillow", kZillowSub: "按地址搜索", galTitle: "挂牌户型图", galNote: "挂牌平台原图，需联网显示。点开可看大图。", galAll: "全部", galPlans: "个户型", filters: "筛选", amenities: "设施", amenNote: "来自楼盘官网和挂牌平台。未列出不代表没有。", amenNone: "暂未找到设施列表。",
     fRent: "1B 租金上限", fAllin: "每月合计上限", fWalk: "步行上限", fRating: "评分不低于", fYear: "建成不早于", fAny: "不限", fTypes: "楼盘类型", fAmen: "必须有", fMore: "其他", fHas1b: "有 1B 价格", fPlans: "有户型图", fOffer: "有当前优惠", fReset: "清除筛选", fShow: "栋符合", fPricedOnly: "价格筛选会隐藏没有 1B 价格的楼。", weightsReset: "恢复默认", weightsCustom: "已调整", safety: "治安", noData: "暂无数据",
-    back: "返回列表", backMap: "返回地图", facts: "基本信息", about: "简介", architect: "建筑师", manager: "物业",
+    back: "返回列表", backMap: "返回地图", star: "加星标", unstar: "取消星标", starHead: "★", starred: "想看", fStarred: "只看星标", facts: "基本信息", about: "简介", architect: "建筑师", manager: "物业",
     channel: "租房方式", address: "地址", costTitle: "一居每月开销", fees: "大楼强制费用",
     electricity: "电费 (FPL)", water_sewer: "水费和污水费", internet: "网络", renters_insurance: "租客保险",
     total: "每月合计", estimate: "估计值", actual: "实际值", base: "基础租金（中位）", onetime: "一次性费用",
@@ -71,6 +71,23 @@ const T = {
 for (const code of ["en", "zh"]) Object.assign(T[code], ((D.city || {}).strings || {})[code]);
 const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
   set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+/* Starred buildings. D.starred_default is the shortlist baked into the page; once a viewer toggles a star,
+   their own list is kept in localStorage and replaces the default for that browser. */
+const starred = (() => { try { const v = JSON.parse(store.get("starred")); if (Array.isArray(v)) return new Set(v); } catch (e) {}
+  return new Set((typeof D !== "undefined" && D.starred_default) || []); })();
+const isStarred = id => starred.has(id);
+function toggleStar(id) {
+  starred.has(id) ? starred.delete(id) : starred.add(id);
+  store.set("starred", JSON.stringify([...starred]));
+  if (map) drawMarkers();
+  if (!document.getElementById("listView").hidden) drawList();
+  document.querySelectorAll(`[data-star="${id}"]`).forEach(paintStar);
+  filtersChanged();
+}
+const starBtn = (id, cls = "") => `<button type="button" class="star-btn ${cls}" data-star="${id}" aria-pressed="${isStarred(id)}" aria-label="${esc(t(isStarred(id) ? "unstar" : "star"))}" title="${esc(t(isStarred(id) ? "unstar" : "star"))}">${isStarred(id) ? "★" : "☆"}</button>`;
+function paintStar(btn) { const on = isStarred(btn.dataset.star); btn.setAttribute("aria-pressed", on); btn.textContent = on ? "★" : "☆";
+  btn.title = btn.ariaLabel = t(on ? "unstar" : "star"); }
+document.addEventListener("click", e => { const btn = e.target.closest(".star-btn"); if (!btn) return; e.stopPropagation(); e.preventDefault(); toggleStar(btn.dataset.star); }, true);
 let lang = store.get("lang") || ((navigator.language || "").startsWith("zh") ? "zh" : "en");
 const t = k => (T[lang] && T[lang][k]) || T.en[k] || k;
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -248,7 +265,7 @@ function cardHtml(b) {
   const ratings = b.ratings.filter(r => r.count || r.platform === "Google" || r.group === "overall").map(r => `<tr><td>${esc(r.group === "overall" ? t("aptsOverall") : r.platform)}${r.group === "overall" ? ` <span class="chip est" title="${esc(t("aptsOverallNote"))}">${lang === "zh" ? "含建筑评级" : "includes building rating"}</span>` : ""}${r.group === "short_stay" ? ` <span class="chip est">${lang === "zh" ? "短住" : "short stay"}</span>` : ""}</td><td class="r"><span class="stars">${stars(r.score)}</span> <span class="num">${r.score.toFixed(1)}</span></td><td class="r num muted">${r.count ? r.count.toLocaleString() : "–"}</td></tr>`).join("");
   return `<div class="photo">${ph ? `<img src="${ph}" alt="${esc(b.name)}">` : `<div class="nophoto">${lang === "zh" ? "暂无官网照片" : "No official photo"}</div>`}<button class="close" aria-label="Close">×</button></div>
   <div class="body">
-    <div><h2>${esc(b.name)}</h2><div class="sub"><span>${esc(b.address)}</span></div></div>
+    <div><h2 class="star-title">${starBtn(b.id)}<span>${esc(b.name)}</span></h2><div class="sub"><span>${esc(b.address)}</span></div></div>
     <div class="chips">${tags.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div>
     ${pros.length || cons.length ? `${pros.length ? `<div class="chips">${pros.map(x => `<span class="chip pro">＋ ${esc(x)}</span>`).join("")}</div>` : ""}${cons.length ? `<div class="chips">${cons.map(x => `<span class="chip con">− ${esc(x)}</span>`).join("")}</div>` : ""}` : `<div class="muted" style="font-size:12px">${t("summaryPending")}</div>`}
     <div class="facts">
@@ -283,7 +300,7 @@ function drawBasemap() {
   BM.rail.forEach(([k, pts]) => L.polyline(pts, { renderer: R, color: k === "mover" ? css("--mover") : css("--rail"), weight: 2, dashArray: k === "mover" ? "4 3" : null, interactive: false }).addTo(g));
   baseLayer = g.addTo(map);
 }
-const F = { rent: null, allin: null, walk: null, rating: 0, year: null, types: new Set(), amen: new Set(), has1b: false, plans: false, offer: false };
+const F = { rent: null, allin: null, walk: null, rating: 0, year: null, types: new Set(), amen: new Set(), has1b: false, plans: false, offer: false, starred: false };
 const FILTER_SLIDERS = [["rent", "fRent", 2000, 7000, 100, v => money(v)], ["allin", "fAllin", 2000, 7500, 100, v => money(v)], ["walk", "fWalk", 3, 25, 1, v => `${v} ${lang === "zh" ? "分钟" : "min"}`],
   ["rating", "fRating", 0, 4.5, 0.5, v => v.toFixed(1)], ["year", "fYear", 1985, 2025, 5, v => String(v)]];
 function passes(b) {
@@ -294,12 +311,13 @@ function passes(b) {
   if (F.rating && (m.rating == null || m.rating < F.rating)) return false;
   if (F.year != null && (!b.year_built || +b.year_built < F.year)) return false;
   if (F.types.size && !F.types.has(b.building_type)) return false;
+  if (F.starred && !isStarred(b.id)) return false;
   if (F.has1b && m.rentMid == null) return false;
   if (F.plans && !((D.floorplans || {})[b.id] || []).length && !b.gallery) return false;
   if (F.offer && !(b.concession && ["stated", "select"].includes(b.concession.status))) return false;
   return [...F.amen].every(k => (b.amenities || []).some(x => x.key === k));
 }
-const activeFilters = () => FILTER_SLIDERS.filter(([k]) => k === "rating" ? F.rating > 0 : F[k] != null).length + F.types.size + F.amen.size + [F.has1b, F.plans, F.offer].filter(Boolean).length;
+const activeFilters = () => FILTER_SLIDERS.filter(([k]) => k === "rating" ? F.rating > 0 : F[k] != null).length + F.types.size + F.amen.size + [F.has1b, F.plans, F.offer, F.starred].filter(Boolean).length;
 function filtersChanged() {
   const n = activeFilters(), c = document.getElementById("filterCount"), match = B.filter(passes).length;
   c.hidden = !n; c.textContent = n;
@@ -315,7 +333,7 @@ function drawFilters() {
   const start = ([k, , lo, hi]) => k === "rating" ? F.rating : k === "year" ? (F.year ?? lo) : (F[k] ?? hi);
   const pct = s => (start(s) - s[2]) / (s[3] - s[2]) * 100;
   const types = ["rental", "condo", "hotel_condo", "mixed"].filter(x => B.some(b => b.building_type === x));
-  const toggles = [["has1b", "fHas1b"], ["plans", "fPlans"], ["offer", "fOffer"]];
+  const toggles = [["starred", "fStarred"], ["has1b", "fHas1b"], ["plans", "fPlans"], ["offer", "fOffer"]];
   const count = k => B.filter(b => (b.amenities || []).some(x => x.key === k)).length;
   panel.innerHTML = `<div class="f-grid">${FILTER_SLIDERS.map(s => `<label class="w-item"><span class="w-head"><span>${t(s[1])}</span><span class="num" id="f-${s[0]}-v">${sliderText(s[0], s[5])}</span></span>
       <input type="range" id="f-${s[0]}" min="${s[2]}" max="${s[3]}" step="${s[4]}" value="${start(s)}" style="--p:${pct(s)}%"></label>`).join("")}</div>
@@ -328,7 +346,7 @@ function drawFilters() {
     i.style.setProperty("--p", (v - lo) / (hi - lo) * 100 + "%"); document.getElementById(`f-${k}-v`).textContent = sliderText(k, fmt); filtersChanged(); }; });
   panel.querySelectorAll(".f-chip").forEach(c => c.onclick = () => { const d = c.dataset, on = c.getAttribute("aria-pressed") !== "true"; c.setAttribute("aria-pressed", on);
     if (d.amen) on ? F.amen.add(d.amen) : F.amen.delete(d.amen); else if (d.type) on ? F.types.add(d.type) : F.types.delete(d.type); else F[d.flag] = on; filtersChanged(); });
-  document.getElementById("fReset").onclick = () => { Object.assign(F, { rent: null, allin: null, walk: null, rating: 0, year: null, has1b: false, plans: false, offer: false }); F.types.clear(); F.amen.clear(); drawFilters(); filtersChanged(); };
+  document.getElementById("fReset").onclick = () => { Object.assign(F, { rent: null, allin: null, walk: null, rating: 0, year: null, has1b: false, plans: false, offer: false, starred: false }); F.types.clear(); F.amen.clear(); drawFilters(); filtersChanged(); };
   filtersChanged();
 }
 function bindFilters() {
@@ -341,8 +359,9 @@ function drawMarkers() {
   markerLayer = L.layerGroup().addTo(map);
   const card = document.getElementById("mapCard");
   B.forEach(b => { if (b.lat == null || !passes(b)) return;
-    const pin = L.divIcon({ className: "marker", html: shapeSvg(b.channel_primary, priceColor(b)), iconSize: [18, 18], iconAnchor: [9, 9] });
-    const mk = L.marker([b.lat, b.lon], { icon: pin, keyboard: true, title: b.name, riseOnHover: true }).addTo(markerLayer);
+    const on = isStarred(b.id);
+    const pin = L.divIcon({ className: "marker" + (on ? " starred" : ""), html: shapeSvg(b.channel_primary, priceColor(b)) + (on ? '<span class="star-badge">★</span>' : ""), iconSize: [18, 18], iconAnchor: [9, 9] });
+    const mk = L.marker([b.lat, b.lon], { icon: pin, keyboard: true, title: b.name, riseOnHover: true, zIndexOffset: on ? 500 : 0 }).addTo(markerLayer);
     mk.bindTooltip(esc(b.name), { className: "lbl", direction: "right", offset: [10, 0], permanent: false });
     mk.on("click", () => showCard(card, b, true));
   });
@@ -359,7 +378,8 @@ function drawLegend() {
     <div class="ramp-labels num"><span>≤${money(br[0])}</span><span>${money(br[1])}</span><span>${money(br[2])}</span><span>&gt;${money(br[3])}</span></div>
     <div class="shapes" style="margin-top:6px"><span>${shapeSvg("A", null, 14)} ${t("noPrice")}</span></div>
     <h4 style="margin-top:10px">${t("shapeTitle")}</h4>
-    <div class="shapes">${["A", "B", "C"].map(c => `<span title="${esc(t("ch" + c + "long"))}">${shapeSvg(c, css("--p3"), 14)} ${t("ch" + c)}</span>`).join("")}</div>`;
+    <div class="shapes">${["A", "B", "C"].map(c => `<span title="${esc(t("ch" + c + "long"))}">${shapeSvg(c, css("--p3"), 14)} ${t("ch" + c)}</span>`).join("")}</div>
+    <div class="shapes" style="margin-top:6px"><span><span class="star-key">★</span> ${t("starred")}</span></div>`;
 }
 function initMap() {
   map = L.map("map", { zoomControl: false, attributionControl: true, minZoom: 12, maxZoom: 18, zoomSnap: 0.5,
@@ -374,6 +394,7 @@ function initMap() {
 /* ---------- list ---------- */
 const OPT = { year: "opt", floors: "opt", size: "opt", ppsf: "opt", apts: "opt", rating: "opt", safety: "opt", rentMid: "opt2", google: "opt3" };
 const COLS = [
+  ["star", "starHead", b => isStarred(b.id) ? 1 : 0, (v, b) => starBtn(b.id)],
   ["name", "name", b => b.name, v => null],
   ["walk", "walkHead", b => M[b.id].walk, v => v == null ? "–" : `${Math.round(v)} ${t("min")}`],
   ["year", "year", b => b.year_built, v => v ?? "–"],
@@ -422,16 +443,16 @@ function drawList() {
       if (va == null && vb == null) return 0; if (va == null) return 1; if (vb == null) return -1;
       return (typeof va === "string" ? va.localeCompare(vb) : va - vb) * rawDir(); });
   const tbl = document.getElementById("ledger");
-  tbl.innerHTML = `<thead><tr>${COLS.map(([k, label]) => `<th data-k="${k}" class="${OPT[k] || ""}" ${k === sortKey ? `aria-sort="${rawDir() > 0 ? "ascending" : "descending"}"` : ""}><span class="th-in">${t(label)}${sortArrows(k)}</span></th>`).join("")}</tr></thead>
-  <tbody>${rows.map(b => `<tr data-id="${b.id}" tabindex="0">${COLS.map(([k, , get, fmt], i) => i === 0
+  tbl.innerHTML = `<thead><tr>${COLS.map(([k, label]) => `<th data-k="${k}" class="${k === "star" ? "star-cell" : OPT[k] || ""}" ${k === sortKey ? `aria-sort="${rawDir() > 0 ? "ascending" : "descending"}"` : ""}><span class="th-in">${t(label)}${sortArrows(k)}</span></th>`).join("")}</tr></thead>
+  <tbody>${rows.map(b => `<tr data-id="${b.id}" tabindex="0">${COLS.map(([k, , get, fmt]) => k === "name"
       ? `<td><span class="name-cell">${shapeSvg(b.channel_primary, priceColor(b), 14)}<b>${esc(b.name)}</b> <span class="muted">${esc(t(b.building_type))}</span></span></td>`
-      : `<td class="num ${OPT[k] || ""}">${fmt(get(b), b)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+      : `<td class="num ${k === "star" ? "star-cell" : OPT[k] || ""}">${fmt(get(b), b)}</td>`).join("")}</tr>`).join("")}</tbody>`;
   tbl.querySelectorAll("th").forEach(th => th.onclick = () => { const k = th.dataset.k;
     if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = naturalDir(k); } drawList(); });
   tbl.querySelectorAll(".sort-arrows button").forEach(btn => btn.onclick = e => { e.stopPropagation();
     sortKey = btn.dataset.k; sortDir = +btn.dataset.dir; drawList(); });
   const select = document.getElementById("sortSelect"), dirBtn = document.getElementById("sortDir");
-  select.innerHTML = COLS.map(([k, label]) => `<option value="${k}">${esc(t(label))}</option>`).join("");
+  select.innerHTML = COLS.map(([k, label]) => `<option value="${k}">${esc(t(k === "star" ? "starred" : label))}</option>`).join("");
   select.value = sortKey;
   select.onchange = () => { sortKey = select.value; sortDir = naturalDir(sortKey); drawList(); };
   dirBtn.textContent = sortDir > 0 ? `▲ ${t("sortAsc")}` : `▼ ${t("sortDesc")}`;
@@ -664,7 +685,7 @@ function drawPage(id) {
   const rentRows = Object.entries(b.rents).map(([u, r]) => `<tr><td>${t(u)} ${r.n < 3 ? `<span class="chip est">${t("lowN")}</span>` : ""}${r.basis.includes("floorplan_from") ? ` <span class="chip">${t("fromPlans")}</span>` : ""}${r.includes_furnished ? ` <span class="chip">${t("inclFurn")}</span>` : ""}</td><td class="r num">${money(r.min)}</td><td class="r num">${money(r.median)}</td><td class="r num">${money(r.max)}</td><td class="r num">${r.sqft ? Math.round(r.sqft) + " ft²" : "–"}</td><td class="r num">${r.n}</td><td class="r num">${b.all_in[u] ? money(b.all_in[u].total.value) : "–"}</td></tr>`).join("");
   el.innerHTML = `<div class="page-hero">${ph ? `<img src="${ph}" alt="">` : ""}<div class="veil"></div><div class="inner">
       <a class="btn ghost" href="${returnView === "map" ? "#" : "#list"}" style="color:#fff;border-color:rgba(255,255,255,.6)">← ${t(returnView === "map" ? "backMap" : "back")}</a>
-      <h2>${esc(b.name)}</h2><div class="chips">${tags.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div></div></div>
+      <h2 class="star-title">${starBtn(b.id, "on-photo")}<span>${esc(b.name)}</span></h2><div class="chips">${tags.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div></div></div>
     <div class="page-body">
       ${pros.length || cons.length ? `${pros.length ? `<div class="chips">${pros.map(x => `<span class="chip pro">＋ ${esc(x)}</span>`).join("")}</div>` : ""}${cons.length ? `<div class="chips">${cons.map(x => `<span class="chip con">− ${esc(x)}</span>`).join("")}</div>` : ""}` : ""}
       <div class="facts" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">
