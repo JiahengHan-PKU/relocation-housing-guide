@@ -353,7 +353,8 @@ function drawMarkers() {
 function drawLegend() {
   const br = priceBreaks(), steps = priceSteps();
   document.getElementById("legendSum").textContent = lang === "zh" ? "图例" : "Legend";
-  document.getElementById("legend").innerHTML = `<h4 style="margin-top:6px">${t("legendPrice")} · ${t(colorBy === "min" ? "lowest" : "median")}</h4>
+  document.getElementById("legend").innerHTML = `<h4 style="margin-top:6px">${t("legendPrice")}</h4>
+    <div class="seg" role="group" aria-label="${esc(t("colorBy"))}">${["median", "min"].map(v => `<button type="button" data-color-by="${v}" aria-pressed="${colorBy === v}">${t(v === "min" ? "lowest" : "median")}</button>`).join("")}</div>
     <div class="ramp">${steps.map(c => `<i style="background:${c}"></i>`).join("")}</div>
     <div class="ramp-labels num"><span>≤${money(br[0])}</span><span>${money(br[1])}</span><span>${money(br[2])}</span><span>&gt;${money(br[3])}</span></div>
     <div class="shapes" style="margin-top:6px"><span>${shapeSvg("A", null, 14)} ${t("noPrice")}</span></div>
@@ -723,7 +724,11 @@ document.getElementById("vMap").onclick = () => location.hash = "";
 document.getElementById("vList").onclick = () => location.hash = "list";
 document.getElementById("lEn").onclick = () => { lang = "en"; store.set("lang", lang); redrawAll(); };
 document.getElementById("lZh").onclick = () => { lang = "zh"; store.set("lang", lang); redrawAll(); };
-document.getElementById("colorBy").onchange = e => { colorBy = e.target.value; if (map) { drawMarkers(); drawLegend(); } if (!document.getElementById("listView").hidden) drawList(); };
+/* The median/lowest switch lives in the map legend; the legend is redrawn on each change, so delegate. */
+document.getElementById("legend").addEventListener("click", e => {
+  const v = e.target.closest("[data-color-by]")?.dataset.colorBy; if (!v || v === colorBy) return;
+  colorBy = v; if (map) { drawMarkers(); drawLegend(); } if (!document.getElementById("listView").hidden) drawList();
+});
 document.getElementById("q").oninput = () => drawList();
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { if (map) { drawBasemap(); drawMarkers(); drawLegend(); } });
 window.addEventListener("hashchange", route);

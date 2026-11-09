@@ -65,6 +65,8 @@ main { position: relative; }
 .legend:not([open]) summary::after { content: " ▸"; }
 .legend { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: 12px; z-index: 600; background: var(--surface);
   border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12px; box-shadow: var(--shadow); max-width: 300px; }
+.legend .seg { margin: 0 0 6px; }
+.legend .seg button { padding: 2px 8px; font-size: 11px; }
 .legend h4 { margin: 0 0 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
 .ramp { display: flex; gap: 2px; margin: 4px 0 2px; }
 .ramp i { flex: 1; height: 10px; border-radius: 3px; }
@@ -299,8 +301,6 @@ table.ledger tbody tr:hover, table.ledger tbody tr.active { background: var(--ac
     <button id="vMap" data-i18n="map" aria-pressed="true"></button><button id="vList" data-i18n="list" aria-pressed="false"></button>
   </div>
   <button type="button" class="f-toggle" id="filterToggle" aria-expanded="false" aria-controls="filterPanel"><svg class="ic" viewBox="0 0 24 24" id="filterIcon"></svg><span id="filterLabel"></span><span class="f-count" id="filterCount" hidden></span></button>
-  <label class="ctl"><span data-i18n="colorBy"></span>
-    <select id="colorBy"><option value="median" data-i18n="median"></option><option value="min" data-i18n="lowest"></option></select></label>
   <div class="seg" role="group" aria-label="Language"><button id="lEn" aria-pressed="true">EN</button><button id="lZh" aria-pressed="false">中文</button></div>
 </header>
 <section id="filterPanel" hidden aria-label="Filters"></section>
