@@ -662,7 +662,7 @@ function drawPage(id) {
   const pros = rs ? splitTags(rs["pros_" + lang] || rs.pros_en) : [], cons = rs ? splitTags(rs["cons_" + lang] || rs.cons_en) : [];
   const rentRows = Object.entries(b.rents).map(([u, r]) => `<tr><td>${t(u)} ${r.n < 3 ? `<span class="chip est">${t("lowN")}</span>` : ""}${r.basis.includes("floorplan_from") ? ` <span class="chip">${t("fromPlans")}</span>` : ""}${r.includes_furnished ? ` <span class="chip">${t("inclFurn")}</span>` : ""}</td><td class="r num">${money(r.min)}</td><td class="r num">${money(r.median)}</td><td class="r num">${money(r.max)}</td><td class="r num">${r.sqft ? Math.round(r.sqft) + " ft²" : "–"}</td><td class="r num">${r.n}</td><td class="r num">${b.all_in[u] ? money(b.all_in[u].total.value) : "–"}</td></tr>`).join("");
   el.innerHTML = `<div class="page-hero">${ph ? `<img src="${ph}" alt="">` : ""}<div class="veil"></div><div class="inner">
-      <a class="btn ghost" href="#list" style="color:#fff;border-color:rgba(255,255,255,.6)">← ${t("back")}</a>
+      <a class="btn ghost" href="${returnView === "map" ? "#" : "#list"}" style="color:#fff;border-color:rgba(255,255,255,.6)">← ${t(returnView === "map" ? "backMap" : "back")}</a>
       <h2>${esc(b.name)}</h2><div class="chips">${tags.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</div></div></div>
     <div class="page-body">
       ${pros.length || cons.length ? `${pros.length ? `<div class="chips">${pros.map(x => `<span class="chip pro">＋ ${esc(x)}</span>`).join("")}</div>` : ""}${cons.length ? `<div class="chips">${cons.map(x => `<span class="chip con">− ${esc(x)}</span>`).join("")}</div>` : ""}` : ""}
@@ -704,8 +704,13 @@ function applyLang() {
   document.getElementById("lEn").setAttribute("aria-pressed", lang === "en"); document.getElementById("lZh").setAttribute("aria-pressed", lang === "zh");
   document.title = t("title");
 }
+/* The building page's back button returns to the view the page was opened from.
+   route() records the last map/list view in returnView; a page opened directly
+   from a shared link (no previous view this session) falls back to the list. */
+let returnView = "list";
 function route() {
   const h = location.hash.slice(1), page = h.startsWith("b-") ? h.slice(2) : null, view = page ? "page" : h === "list" ? "list" : "map";
+  if (view !== "page") returnView = view;
   document.getElementById("mapView").hidden = view !== "map"; document.getElementById("listView").hidden = view !== "list"; document.getElementById("pageView").hidden = view !== "page";
   document.getElementById("vMap").setAttribute("aria-pressed", view === "map"); document.getElementById("vList").setAttribute("aria-pressed", view === "list");
   if (view === "map") { if (!map) initMap(); else setTimeout(() => map.invalidateSize(), 0); }
