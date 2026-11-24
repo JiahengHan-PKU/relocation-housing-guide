@@ -162,6 +162,9 @@ def export_data(data_dir, out_path):
     raws = {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(f"{data_dir}/raw/*.json")}
     zips = json.load(open(f"{data_dir}/building_zip.json"))
     safety = {r["zip"]: r for r in csv.DictReader(open(f"{data_dir}/safety_zip.csv"))}
+    google_walk = {}
+    if os.path.exists(f"{data_dir}/google_walk.csv"):
+        google_walk = {r["building_id"]: r for r in csv.DictReader(open(f"{data_dir}/google_walk.csv"))}
     out, reviews = [], {}
     for b in buildings:
         raw = raws.get(b["id"], {})
@@ -189,6 +192,8 @@ def export_data(data_dir, out_path):
                                  "channel_primary", "channels_all", "summary_en", "summary_zh",
                                  "photo_file", "photo_source_url", "facts_source_urls", "as_of"]},
             **{k: (float(b[k]) if b[k] else None) for k in ["lat", "lon", "walk_m", "walk_min", "year_built", "floors", "units"]},
+            **({"walk_min": float(google_walk[b["id"]]["walk_min"]), "walk_m": round(float(google_walk[b["id"]]["walk_mi"]) * 1609.34),
+                "walk_source": {k: google_walk[b["id"]][k] for k in ["source_url", "as_of"]}} if b["id"] in google_walk else {"walk_source": None}),
             "rules": normalize_rules(raw.get("rules")),
             "conflicts": (raw.get("facts") or {}).get("conflicts"),
             "notes": raw.get("notes"),
@@ -210,7 +215,8 @@ def export_data(data_dir, out_path):
                "map_bounds": [CITY["basemap"]["wide_bbox"][:2], CITY["basemap"]["wide_bbox"][2:]], "city": {**CITY.get("page", {}), "nearby": CITY.get("nearby", {})}, "assumptions": assumptions,
                "buildings": out, "reviews": reviews,
                "floorplans": {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(f"{data_dir}/floorplans/*.json")},
-               "starred_default": json.load(open(f"{data_dir}/starred.json")) if os.path.exists(f"{data_dir}/starred.json") else []},
+               "starred_default": json.load(open(f"{data_dir}/starred.json")) if os.path.exists(f"{data_dir}/starred.json") else [],
+               "poi_routes": json.load(open(f"{data_dir}/poi_routes.json")) if os.path.exists(f"{data_dir}/poi_routes.json") else {}},
               open(out_path, "w"), ensure_ascii=False, separators=(",", ":"))
     return len(out), sum(len(v) for v in reviews.values())
 

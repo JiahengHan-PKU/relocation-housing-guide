@@ -12,7 +12,7 @@ def transit_match(poi, rule):
     return poi["kind"] in ("station", "halt") and str(poi.get("mode")) in rule["modes"]
 
 
-def nearest_pois(lat, lon, pois):
+def nearest_pois(lat, lon, pois, routes=None):
     """Find the nearest place of each kind and count nearby restaurants.
 
     Distances are straight-line meters times 1.25, a typical street-grid
@@ -21,7 +21,10 @@ def nearest_pois(lat, lon, pois):
     Args:
         lat: Building latitude.
         lon: Building longitude.
-        pois: List of {kind, name, brand, network, lat, lon}.
+        pois: List of {kind, name, brand, network, lat, lon}, optionally with
+            "i", the place's index in data/pois.json.
+        routes: Optional {index: meters} of street-network walking distances
+            for this building, from tools/route_pois.py. Used when present.
 
     Returns:
         A dict mapping each category to (name, meters), plus counts. Brands and
@@ -30,6 +33,8 @@ def nearest_pois(lat, lon, pois):
     city = load_city().get("nearby", {})
 
     def meters(poi):
+        if routes and str(poi.get("i")) in routes:
+            return routes[str(poi["i"])]
         dx = math.radians(poi["lon"] - lon) * math.cos(math.radians(lat))
         dy = math.radians(poi["lat"] - lat)
         return 6371000 * math.hypot(dx, dy) * 1.25

@@ -43,6 +43,12 @@ def fill_demo(root):
               open(f"{root}/data/pois.json", "w"))
     json.dump({key: [] for key in ["sea", "land", "water", "park", "building", "road", "rail"]},
               open(f"{root}/web/basemap.json", "w"))
+    path = [(1, 40.001, -75.001), (2, 40.0013, -75.0009), (3, 40.0015, -75.0012), (4, 40.0013, -75.0008)]
+    json.dump({"elements": [{"type": "way", "tags": {"highway": "footway"}, "nodes": [n for n, _, _ in path[:3]],
+                             "geometry": [{"lat": a, "lon": o} for _, a, o in path[:3]]},
+                            {"type": "way", "tags": {"highway": "footway"}, "nodes": [2, 4],
+                             "geometry": [{"lat": a, "lon": o} for _, a, o in (path[1], path[3])]}]},
+              open(f"{root}/data/walk_network_raw.json", "w"))
 
 
 def smoke_test():
@@ -53,7 +59,8 @@ def smoke_test():
         subprocess.run([sys.executable, "tools/new_city.py", "."], cwd=tmp, check=True)
         fill_demo(tmp)
         env = {**os.environ, "PYTHONPATH": "tools"}
-        for step in [["tools/extract_amenities.py"], ["tools/build_contacts.py"], ["tools/export_data.py"], ["tools/build_page.py"]]:
+        for step in [["tools/extract_amenities.py"], ["tools/build_contacts.py"], ["tools/route_pois.py"],
+                     ["tools/export_data.py"], ["tools/build_page.py"]]:
             subprocess.run([sys.executable, *step], cwd=tmp, check=True, env=env)
         page = f"{tmp}/dist/demo.html"
         assert os.path.getsize(page) > 100000
@@ -77,6 +84,7 @@ def smoke_test():
             assert not errors, errors
             assert "Harbor One" in body and "$120,000" in body
             assert tab.locator(".nb-row").count() == 2 and tab.locator(".nb-pin").count() == 2
+            assert "≈" not in tab.inner_text("#nbList"), "nearby places should use routed distances"
             tab.locator(".nb-row").first.click()
             assert tab.locator(".nb-mk.on").count() == 1
             tab.evaluate("location.hash=''")

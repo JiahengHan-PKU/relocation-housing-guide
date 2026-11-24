@@ -17,6 +17,8 @@ Allowed routes: official APIs with the user's key, pages the user saves, search 
 - Keep browser batches to about three pages, because a long batch can time out and keep running.
 - A collector must raise on 429, never record it as "page not found". Silent 429s once produced false empty records that blocked later runs, because collectors skip saved files.
 - After a rate limit, delete any empty records the run wrote, wait, and retry slowly.
+- Public routing servers (the OSRM demo and routing.openstreetmap.de) rate-limit bulk jobs: thousands of building-to-place routes earned a 429 within minutes. Download the walk network once from Overpass and route locally instead. Scripts that run long must save progress as they go so a stop loses nothing.
+- Google Maps may be read in the user's own browser for a short list of routes, such as each building's walk to the office. Do not scrape it at scale.
 
 ## Finding pages
 
